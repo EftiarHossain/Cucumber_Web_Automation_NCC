@@ -14,6 +14,9 @@ public class PG002_LoginPageOR {
     public static By deviceBindingOTPCancelBtn = By.xpath("//button[contains(text(),'Cancel')]");
     public static By otpVerificationTitle = By.xpath("//h2[contains(text(),'OTP Verification')]");
     public static By otpInputField = By.xpath("//body/app-root[1]/layout[1]/empty-layout[1]/div[1]/div[1]/auth-sign-in[1]/section[1]/div[1]/div[2]/form[1]/code-input[1]/span[1]/input[1]");
+    public static By otpConfirmBtn = By.xpath("//button[contains(text(),'Submit')]");
+    public static By otpResend = By.xpath("//strong[contains(text(),'Resend')]");
+    public static By backToSignIn = By.xpath("//a[contains(text(),'Sign In')]");
 
 
 }

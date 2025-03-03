@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import objectRepository.PG002_LoginPageOR;
 import objectRepository.PG001_SplashPageOR;
+import objectRepository.PG003_DashboardOR;
 import utils.Base;
 import utils.Operations;
 
@@ -52,13 +53,23 @@ public class PM001_SplashAndLogin extends Base {
         Operations.matchText(PG002_LoginPageOR.deviceBindingModalTitle, expectedDeviceBindingTitle, driver);
     }
 
-    @When ("I verify 2fa Successfully")
-    public void iVerify2faSuccessfully() {
+    @When ("I verify 2fa Successfully With SMS {string}")
+    public void iVerify2faSuccessfullyWithSMS(String OTP) {
+        Operations.click(PG002_LoginPageOR.deviceBindingOTPTypeSMS, driver);
+        Operations.click(PG002_LoginPageOR.deviceBindingOTPNextBtn, driver);
+        Operations.verifyElementIsPresent(PG002_LoginPageOR.otpVerificationTitle, driver);
+        Operations.click(PG002_LoginPageOR.otpInputField, driver);
+        Operations.sendText(PG002_LoginPageOR.otpInputField, OTP, driver);
+        Operations.waitUntilElementIsClickable(PG002_LoginPageOR.otpConfirmBtn, driver);
+        Operations.click(PG002_LoginPageOR.otpConfirmBtn, driver);
 
     }
 
     @Then("I navigate to my dashboard")
     public void iNavigateToMyDashboard() {
+        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardNavBar, driver);
+        Operations.click(PG003_DashboardOR.dashboardNavBar, driver);
+        Operations.matchText(PG003_DashboardOR.dashboardNavBar, "Dashboard" ,driver);
 
     }
 }
