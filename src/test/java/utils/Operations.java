@@ -16,6 +16,9 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+import static org.hamcrest.core.StringContains.containsString;
+import static org.junit.Assert.assertThat;
+
 
 public class Operations {
 
@@ -65,6 +68,12 @@ public class Operations {
         WebElement el = findElement(locator, driver);
         String actualText = el.getText();
         Assert.assertEquals(actualText, expectedText);
+    }
+
+    public static void matchTextContains(By locator, String expectedText, WebDriver driver){
+        WebElement el = findElement(locator, driver);
+        String actualText = el.getText();
+        assertThat(actualText, containsString(expectedText));
     }
 
     public static void matchAttribute(By locator, String expectedText,String attributeName, WebDriver driver){
