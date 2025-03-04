@@ -6,9 +6,7 @@ import objectRepository.PG003_DashboardOR;
 import utils.Base;
 import utils.Operations;
 
-import static org.junit.Assert.assertTrue;
-
-public class PM002_Dashboard extends Base {
+public class PM003_FundTransfer extends Base {
 
     @Then("I can see my Accounts")
     public void iCanSeeMyAccounts() {

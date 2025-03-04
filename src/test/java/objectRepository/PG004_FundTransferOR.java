@@ -2,7 +2,7 @@ package objectRepository;
 
 import org.openqa.selenium.By;
 
-public class PG003_DashboardOR {
+public class PG004_FundTransferOR {
     public static By dashboardNavBar = By.xpath("//span[contains(text(),'Dashboard')]");
 
     public static By dashboardAccountTab = By.xpath("//mat-tab-header/div[1]/div[1]/div[1]/div[1]/span[2]/span[1]");

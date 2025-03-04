@@ -125,7 +125,7 @@ public class Operations {
     public static void waitUntilElementIsClickable(By locator, WebDriver driver) {
         WebElement el = findElement(locator, driver);
         // explicit wait
-        WebDriverWait wt = new WebDriverWait(driver, Duration.ofSeconds(1L));
+        WebDriverWait wt = new WebDriverWait(driver, Duration.ofSeconds(20L));
         // elementToBeClickable expected criteria
         wt.until(ExpectedConditions.elementToBeClickable (el));
     }
@@ -134,7 +134,7 @@ public class Operations {
     public static void waitUntilElementIsVisible(By locator, WebDriver driver) {
         WebElement el = findElement(locator, driver);
         // explicit wait
-        WebDriverWait wt = new WebDriverWait(driver, Duration.ofSeconds(10L));
+        WebDriverWait wt = new WebDriverWait(driver, Duration.ofSeconds(20L));
         // elementToBeVisible expected criteria
         wt.until(ExpectedConditions.visibilityOf(el));
     }
