@@ -50,18 +50,4 @@ public class PM004_WithinFundTransfer extends Base {
         Operations.click(PG004_FundTransfer.transferDetailsNextButton, driver);
     }
 
-//    @Then("I can see transaction details screen select OTP channel, accept the terms and confirm next to continue by OTP verification {string}")
-//    public void iCanSeeTransactionScreenVerifyOTPWithinFT(String OTP) {
-//        Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferReviewPageTitle, driver);
-//        Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferReviewPageTitle, driver);
-//        Operations.click(PG004_FundTransfer.fundTransferAuthenticationTypeSMS, driver);
-//        Operations.click(PG004_FundTransfer.fundTransferTermsAndConditionCheckbox, driver);
-//        Operations.click(PG004_FundTransfer.transferDetailsNextButton, driver);
-//        Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferOTPInput, driver);
-//        Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferOTPInput, driver);
-//        Operations.sendText(PG004_FundTransfer.fundTransferOTPInput,OTP, driver);
-//        Operations.waitUntilElementIsClickable(PG004_FundTransfer.fundTransferOTPInputNext, driver);
-//        Operations.click(PG004_FundTransfer.fundTransferOTPInputNext, driver);
-//    }
-
 }
