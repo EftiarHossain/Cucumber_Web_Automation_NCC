@@ -39,7 +39,7 @@ public class PG004_FundTransfer {
     public static By fundTransferAuthenticationTypeEmail = By.xpath("//label[contains(text(),'Email')]");
     public static By fundTransferTermsAndConditionLink = By.xpath("//span[contains(text(),'Terms & Conditions')]");
     public static By ownFundTransferTermsAndConditionCheckbox = By.xpath("//body[1]/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own-details[1]/div[1]/div[1]/form[1]/div[4]/div[1]/div[1]/mat-checkbox[1]/div[1]/div[1]/input[1]");
-    public static By withinFundTransferTermsAndConditionCheckbox = By.xpath("//body[1]/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own-details[1]/div[1]/div[1]/form[1]/div[4]/div[1]/div[1]/mat-checkbox[1]/div[1]/div[1]/input[1]");
+    public static By withinFundTransferTermsAndConditionCheckbox = By.xpath("//input[@type='checkbox']");
 
     public static By fundTransferTermsAndConditionDialogue = By.xpath("//body/div[2]/div[2]/div[1]/mat-dialog-container[1]/div[1]/div[1]");
 

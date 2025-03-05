@@ -1,6 +1,6 @@
 Feature: Dashboard
 
-  Scenario: Validate Dashboard, Account Details, Statement, DPS, FDR, Loan & Card Details
+  Scenario: Validate Dashboard, Account Details, Statement Download, DPS, FDR, Loan & Card Details
     When I navigate to my dashboard
     Then I can see my Accounts
     When I click on any Account
