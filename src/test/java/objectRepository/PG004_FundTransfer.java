@@ -12,7 +12,7 @@ public class PG004_FundTransfer {
     public static By fundTransferTitle = By.xpath("//h1[contains(text(),'Fund Transfer')]");
     public static By continueWithFavourite = By.xpath("//h1[contains(text(),'Continue With Favourite')]");
     public static By ownAccountSearchField = By.xpath("//body[1]/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/form[1]/mat-form-field[1]/div[1]/div[2]/div[2]/input[1]");
-    public static By withinBeneficiarySearchField = By.xpath("//body[1]/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-other[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/form[1]/mat-form-field[1]/div[1]/div[2]/div[2]/input[1]");
+    public static By beneficiarySearchField = By.xpath("//input[@placeholder='Search Beneficiary']");
     public static By continueWithoutBeneficiaryBtn = By.xpath("//h1[contains(text(),'Continue without Beneficiary')]");
 
     public static By ownAccountListFirstAccount = By.xpath("//body/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own[1]/div[1]/div[1]/form[1]/div[1]/div[3]/div[1]/button[1]");
@@ -21,8 +21,23 @@ public class PG004_FundTransfer {
     public static By transferDetailsScreenTitle = By.xpath("//h1[contains(text(),'Transfer Details')]");
     public static By ownTransferDetailsToAccount = By.xpath("//body/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own-details[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]");
     public static By withinTransferDetailsToAccountField = By.xpath("//input[@placeholder='Enter To Account']");
-    public static By ownTransferDetailsAvailableBalance = By.xpath("//body[1]/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own-details[1]/div[1]/div[1]/form[1]/div[1]/div[3]/div[1]/mat-form-field[1]/div[1]/div[1]/div[1]/input[1]");
-    public static By withinTransferDetailsAvailableBalance = By.xpath("//body[1]/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-within-bank-without-beneficiary[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/mat-form-field[1]/div[1]/div[1]/div[1]/input[1]");
+    public static By otherTransferDetailsToAccountField = By.xpath("//input[@placeholder='Enter To Account/Card Number']");
+    public static By otherTransferDetailsAccountNameInputField = By.xpath("//input[@formcontrolname='toAccountName']");
+
+    public static By ownTransferDetailsAvailableBalance = By.xpath("//input[@aria-invalid='false']");
+    public static By withinTransferDetailsAvailableBalance = By.xpath("//input[@aria-invalid='false']");
+    public static By otherTransferDetailsAvailableBalance = By.xpath("//input[@aria-invalid='false']");
+    public static By otherTransferDetailsAccountTypeSelection = By.xpath("//span[normalize-space()='--Select Account Type--']");
+    public static By otherTransferDetailsAccountTypeSelectionAccount = By.xpath("//span[normalize-space()='ACCOUNT']");
+    public static By otherTransferDetailsAccountTypeSelectionCard = By.xpath("//span[normalize-space()='CARD']");
+    public static By otherTransferDetailsBankSelectionField = By.xpath("//span[normalize-space()='--Select Bank--']");
+    public static By otherTransferDetailsSelectedBank = By.xpath("//mat-option[@role='option']//span[contains(text(),'Al-Arafah Islami Bank Limited')]");
+    public static By otherTransferDetailsDistrictSelectionField = By.xpath("//span[normalize-space()='--Select District--']");
+    public static By otherTransferDetailsSelectedDistrict = By.xpath("//mat-option[@role='option']//span[contains(text(),'BAGERHAT')]");
+    public static By otherTransferDetailsBranchSelectionField = By.xpath("//span[normalize-space()='--Select Branch--']");
+    public static By otherTransferDetailsSelectedBranch = By.xpath("//mat-option[@role='option']//span[contains(text(),'BAGERHAT')]");
+    public static By otherTransferDetailsNPSBToggle = By.xpath("//input[@value='NPSB']");
+    public static By otherTransferDetailsBFTNToggle = By.xpath("//input[@value='BEFTN']");
 
     public static By transferDetailsTransferAmount = By.xpath("//input[@placeholder='Enter Transfer Amount']");
     public static By transferDetailsTransferAmountSlab = By.xpath("//input[@placeholder='Enter Transfer Amount']");
@@ -39,7 +54,7 @@ public class PG004_FundTransfer {
     public static By fundTransferAuthenticationTypeEmail = By.xpath("//label[contains(text(),'Email')]");
     public static By fundTransferTermsAndConditionLink = By.xpath("//span[contains(text(),'Terms & Conditions')]");
     public static By ownFundTransferTermsAndConditionCheckbox = By.xpath("//body[1]/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own-details[1]/div[1]/div[1]/form[1]/div[4]/div[1]/div[1]/mat-checkbox[1]/div[1]/div[1]/input[1]");
-    public static By withinFundTransferTermsAndConditionCheckbox = By.xpath("//input[@type='checkbox']");
+    public static By fundTransferTermsAndConditionCheckbox = By.xpath("//input[@type='checkbox']");
 
     public static By fundTransferTermsAndConditionDialogue = By.xpath("//body/div[2]/div[2]/div[1]/mat-dialog-container[1]/div[1]/div[1]");
 

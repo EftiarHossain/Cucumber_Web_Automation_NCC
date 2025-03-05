@@ -59,7 +59,7 @@ public class PM003_OwnFundTransfer extends Base {
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferReviewPageTitle, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferReviewPageTitle, driver);
         Operations.click(PG004_FundTransfer.fundTransferAuthenticationTypeSMS, driver);
-        Operations.click(PG004_FundTransfer.ownFundTransferTermsAndConditionCheckbox, driver);
+        Operations.click(PG004_FundTransfer.fundTransferTermsAndConditionCheckbox, driver);
         Operations.click(PG004_FundTransfer.transferDetailsNextButton, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferOTPInput, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferOTPInput, driver);
@@ -77,8 +77,9 @@ public class PM003_OwnFundTransfer extends Base {
     }
 
     @Then("I can download the transaction receipt")
-    public void iCanDownloadTransactionReceipt() {
+    public void iCanDownloadTransactionReceipt() throws InterruptedException {
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferDownloadReceipt, driver);
+        Operations.sleep(4000);
         Operations.click(PG004_FundTransfer.fundTransferDownloadReceipt, driver);
     }
 

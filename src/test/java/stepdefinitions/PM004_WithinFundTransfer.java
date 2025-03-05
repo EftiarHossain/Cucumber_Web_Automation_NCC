@@ -1,8 +1,6 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import objectRepository.PG003_DashboardOR;
 import objectRepository.PG004_FundTransfer;
 import utils.Base;
 import utils.Operations;
@@ -17,7 +15,7 @@ public class PM004_WithinFundTransfer extends Base {
         Operations.click(PG004_FundTransfer.navBarWithinFundTransfer, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferTitle, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.continueWithFavourite, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.withinBeneficiarySearchField, driver);
+        Operations.verifyElementIsPresent(PG004_FundTransfer.beneficiarySearchField, driver);
     }
 
     @Then("I click on Continue Without Beneficiary to Transfer Money")
@@ -52,18 +50,18 @@ public class PM004_WithinFundTransfer extends Base {
         Operations.click(PG004_FundTransfer.transferDetailsNextButton, driver);
     }
 
-    @Then("I can see transaction details screen for Within FT, select OTP channel, accept the terms and confirm next to continue by OTP verification {string}")
-    public void iCanSeeTransactionScreenVerifyOTPWithinFT(String OTP) {
-        Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferReviewPageTitle, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferReviewPageTitle, driver);
-        Operations.click(PG004_FundTransfer.fundTransferAuthenticationTypeSMS, driver);
-        Operations.click(PG004_FundTransfer.withinFundTransferTermsAndConditionCheckbox, driver);
-        Operations.click(PG004_FundTransfer.transferDetailsNextButton, driver);
-        Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferOTPInput, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferOTPInput, driver);
-        Operations.sendText(PG004_FundTransfer.fundTransferOTPInput,OTP, driver);
-        Operations.waitUntilElementIsClickable(PG004_FundTransfer.fundTransferOTPInputNext, driver);
-        Operations.click(PG004_FundTransfer.fundTransferOTPInputNext, driver);
-    }
+//    @Then("I can see transaction details screen select OTP channel, accept the terms and confirm next to continue by OTP verification {string}")
+//    public void iCanSeeTransactionScreenVerifyOTPWithinFT(String OTP) {
+//        Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferReviewPageTitle, driver);
+//        Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferReviewPageTitle, driver);
+//        Operations.click(PG004_FundTransfer.fundTransferAuthenticationTypeSMS, driver);
+//        Operations.click(PG004_FundTransfer.fundTransferTermsAndConditionCheckbox, driver);
+//        Operations.click(PG004_FundTransfer.transferDetailsNextButton, driver);
+//        Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferOTPInput, driver);
+//        Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferOTPInput, driver);
+//        Operations.sendText(PG004_FundTransfer.fundTransferOTPInput,OTP, driver);
+//        Operations.waitUntilElementIsClickable(PG004_FundTransfer.fundTransferOTPInputNext, driver);
+//        Operations.click(PG004_FundTransfer.fundTransferOTPInputNext, driver);
+//    }
 
 }
