@@ -34,8 +34,8 @@ jobs:
       - name: Run Cucumber tests with JUnit
         run: mvn -B test -Dtest=runners.TestRunner
 
-      - name: Upload Surefire test results
-        uses: actions/upload-artifact@v2  # Reverted to v2
+      - name: Upload Cucumber HTML report
+        uses: actions/upload-artifact@v2
         with:
-          name: surefire-reports
-          path: target/surefire-reports/*.xml
+          name: cucumber-reports
+          path: target/cucumber-html-report.html/
