@@ -14,57 +14,56 @@ public class PM007_TopUpPayment extends Base {
         Operations.click(PG005_TopUpPayment.navBarTopUp, driver);
         Operations.waitUntilElementIsVisible(PG005_TopUpPayment.topUpTitle, driver);
         Operations.verifyElementIsPresent(PG005_TopUpPayment.topUpTitle, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.continueWithFavourite, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.beneficiarySearchField, driver);
+        Operations.verifyElementIsPresent(PG005_TopUpPayment.continueWithFavourite, driver);
+        Operations.verifyElementIsPresent(PG005_TopUpPayment.searchField, driver);
     }
 
-    @Then("I click on Continue Without Beneficiary to Transfer Money via TopUp")
+    @Then("I click on Continue Without Beneficiary and select operator to Transfer Money via TopUp")
     public void iClickOnContinueWithoutBeneficiary() throws InterruptedException {
-        Operations.waitUntilElementIsVisible(PG004_FundTransfer.topUpTitle, driver);
-        Operations.waitForPageToLoad(driver);
-        Operations.sleep(5000);
-        Operations.click(PG004_FundTransfer.continueWithoutBeneficiaryBtn, driver);
-//        Operations.waitUntilElementIsVisible(PG004_FundTransfer.transferDetailsScreenTitle, driver);
-//        Operations.verifyElementIsPresent(PG004_FundTransfer.transferDetailsScreenTitle, driver);
+        Operations.waitUntilElementIsVisible(PG005_TopUpPayment.topUpTitle, driver);
+        Operations.click(PG005_TopUpPayment.continueWithoutBeneficiaryBtn, driver);
+        Operations.waitUntilElementIsVisible(PG005_TopUpPayment.selectOperatorTitle, driver);
+        Operations.verifyElementIsPresent(PG005_TopUpPayment.selectOperatorGP, driver);
+        Operations.click(PG005_TopUpPayment.selectOperatorGP, driver);
+        Operations.waitUntilElementIsVisible(PG005_TopUpPayment.topUpDetailsScreenTitle, driver);
     }
 
-    @Then("I navigated to the transfer details screen for MFS bKash FT with a selected from account and available balance populated")
-    public void iNavigatedToTheTransferDetailsScreenMFSFT() {
-        Operations.waitUntilElementIsVisible(PG004_FundTransfer.transferDetailsScreenTitle, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.transferDetailsScreenTitle, driver);
-        Operations.waitUntilElementIsVisible(PG004_FundTransfer.mfsBkashToAccountInputField, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.mfsBkashToAccountInputField, driver);
-        Operations.waitUntilElementIsVisible(PG004_FundTransfer.mfsTransferDetailsAvailableBalance, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.mfsTransferDetailsAvailableBalance, driver);
+    @Then("I navigated to the transfer details screen for Topup with a selected from account and available balance populated")
+    public void iNavigatedToTheTransferDetailsScreenTopup() {
+        Operations.waitUntilElementIsVisible(PG005_TopUpPayment.topUpDetailsScreenTitle, driver);
+        Operations.waitUntilElementIsVisible(PG005_TopUpPayment.topUpDetailsScreenTitle, driver);
+        Operations.verifyElementIsPresent(PG005_TopUpPayment.topUpPaymentDetailsAvailableBalance, driver);
     }
 
-    @Then("I input To Account Number {string} for bkash, transfer amount {string} below my available balance and remarks and confirm next to continue")
-    public void iFilledTransferDetailsScreen(String accountNumber, String amount) throws InterruptedException {
-        Operations.verifyElementIsPresent(PG004_FundTransfer.mfsBkashToAccountInputField, driver);
-        Operations.click(PG004_FundTransfer.mfsBkashToAccountInputField, driver);
-        Operations.sendText(PG004_FundTransfer.mfsBkashToAccountInputField, accountNumber, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.transferDetailsTransferAmount, driver);
-        Operations.click(PG004_FundTransfer.transferDetailsTransferAmount, driver);
+    @Then("I input To Account Number {string} for topup, transfer amount {string} below my available balance, select connection type and remarks and confirm next to continue")
+    public void iFilledTransferDetailsScreen(String accountNumber, String amount){
+        Operations.verifyElementIsPresent(PG005_TopUpPayment.topUpPaymentDetailsToAccountField, driver);
+        Operations.click(PG005_TopUpPayment.topUpPaymentDetailsToAccountField, driver);
+        Operations.sendText(PG005_TopUpPayment.topUpPaymentDetailsToAccountField, accountNumber, driver);
+        Operations.verifyElementIsPresent(PG005_TopUpPayment.transferDetailsTransferAmount, driver);
+        Operations.click(PG005_TopUpPayment.transferDetailsTransferAmount, driver);
+        Operations.sendText(PG005_TopUpPayment.transferDetailsTransferAmount, amount, driver);
+        Operations.verifyElementIsPresent(PG005_TopUpPayment.connectionTypeField, driver);
+        Operations.click(PG005_TopUpPayment.connectionTypeField, driver);
+        Operations.click(PG005_TopUpPayment.connectionTypePrepaid, driver);
+        Operations.sendText(PG005_TopUpPayment.transferDetailsRemarks,"AutomatedTest", driver);
+        Operations.waitUntilElementIsClickable(PG005_TopUpPayment.transferDetailsNextButton, driver);
+        Operations.click(PG005_TopUpPayment.transferDetailsNextButton, driver);
+    }
+
+    @Then("I can see transaction details screen for Topup, select OTP channel, accept the terms and click confirm to continue by OTP verification {string}")
+    public void iCanSeeTransactionScreenVerifyOTPTopup(String OTP) throws InterruptedException {
+        Operations.waitUntilElementIsVisible(PG005_TopUpPayment.topUpReviewPageTitle, driver);
+        Operations.verifyElementIsPresent(PG005_TopUpPayment.topUpReviewPageTitle, driver);
+        Operations.click(PG005_TopUpPayment.fundTransferAuthenticationTypeSMS, driver);
+        Operations.click(PG005_TopUpPayment.fundTransferTermsAndConditionCheckbox, driver);
+        Operations.click(PG005_TopUpPayment.transferDetailsNextButton, driver);
+        Operations.waitUntilElementIsVisible(PG005_TopUpPayment.fundTransferOTPInput, driver);
+        Operations.verifyElementIsPresent(PG005_TopUpPayment.fundTransferOTPInput, driver);
+        Operations.sendText(PG005_TopUpPayment.fundTransferOTPInput,OTP, driver);
         Operations.sleep(3000);
-        Operations.sendText(PG004_FundTransfer.transferDetailsTransferAmount, amount, driver);
-        Operations.sendText(PG004_FundTransfer.transferDetailsRemarks,"AutomatedTest", driver);
-        Operations.waitUntilElementIsClickable(PG004_FundTransfer.transferDetailsNextButton, driver);
-        Operations.click(PG004_FundTransfer.transferDetailsNextButton, driver);
-    }
-
-    @Then("I can see transaction details screen for MFS, select OTP channel, accept the terms and click confirm to continue by OTP verification {string}")
-    public void iCanSeeTransactionScreenVerifyOTPMFS(String OTP) throws InterruptedException {
-        Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferReviewPageTitle, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferReviewPageTitle, driver);
-        Operations.click(PG004_FundTransfer.fundTransferAuthenticationTypeSMS, driver);
-        Operations.click(PG004_FundTransfer.fundTransferTermsAndConditionCheckbox, driver);
-        Operations.click(PG004_FundTransfer.mFSTransferDetailsConfirmButton, driver);
-        Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferOTPInput, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferOTPInput, driver);
-        Operations.sendText(PG004_FundTransfer.fundTransferOTPInput,OTP, driver);
-        Operations.sleep(3000);
-        Operations.waitUntilElementIsClickable(PG004_FundTransfer.mFSFundTransferOTPInputNext, driver);
-        Operations.click(PG004_FundTransfer.mFSFundTransferOTPInputNext, driver);
+        Operations.waitUntilElementIsClickable(PG005_TopUpPayment.topUpOTPInputNext, driver);
+        Operations.click(PG005_TopUpPayment.topUpOTPInputNext, driver);
     }
 
 }
