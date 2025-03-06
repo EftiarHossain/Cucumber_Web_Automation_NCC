@@ -79,7 +79,7 @@ public class PM003_OwnFundTransfer extends Base {
     @Then("I can download the transaction receipt")
     public void iCanDownloadTransactionReceipt() throws InterruptedException {
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferDownloadReceipt, driver);
-        Operations.sleep(4000);
+        Operations.sleep(8000);
         Operations.click(PG004_FundTransfer.fundTransferDownloadReceipt, driver);
     }
 

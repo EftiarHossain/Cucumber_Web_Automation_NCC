@@ -8,7 +8,7 @@ import utils.Operations;
 public class PM005_OtherFundTransfer extends Base {
 
     @Then("I navigate to the Other Account Fund Transfer")
-    public void iNavigateToTheWithinAccountFundTransfer() {
+    public void iNavigateToTheOtherAccountFundTransfer() {
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.navBarFundTransfer, driver);
         Operations.click(PG004_FundTransfer.navBarFundTransfer, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.navBarOtherFundTransfer, driver);
@@ -19,7 +19,7 @@ public class PM005_OtherFundTransfer extends Base {
     }
 
     @Then("I navigated to the transfer details screen for Other FT with a selected from account and available balance populated")
-    public void iNavigatedToTheTransferDetailsScreenWithinFT() {
+    public void iNavigatedToTheTransferDetailsScreenOtherFT() {
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.transferDetailsScreenTitle, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.transferDetailsScreenTitle, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.otherTransferDetailsToAccountField, driver);
