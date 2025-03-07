@@ -25,8 +25,10 @@ public class Base {
         prefs.put("profile.default_content_settings.popups", 0);
         prefs.put("profile.content_settings.exceptions.automatic_downloads.*.setting", 1);
 
-        // Set download directory
-        prefs.put("download.default_directory", "/github/workspace/downloads");
+        prefs.put("download.default_directory", System.getProperty("user.dir") + "/downloads");  // Relative to workspace
+        prefs.put("download.prompt_for_download", false);
+        prefs.put("download.directory_upgrade", true);
+        prefs.put("safebrowsing.enabled", true);
 
         options.setExperimentalOption("prefs", prefs);
         WebDriverManager.chromedriver().setup();
