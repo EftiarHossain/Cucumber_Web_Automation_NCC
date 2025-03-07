@@ -47,6 +47,13 @@ jobs:
 
       - name: List Downloaded Files
         run: ls -al $GITHUB_WORKSPACE/downloads
+
+      - name: Debug Before Uploading
+        run: |
+            echo "Checking Downloads Directory..."
+            ls -al $GITHUB_WORKSPACE/downloads || echo "Directory not found!"
+
+      - name: Upload Downloaded Files
         uses: actions/upload-artifact@v4
         with:
           name: workspace-files
@@ -70,9 +77,3 @@ jobs:
           server_port: 587  # Correct parameter for SMTP port
           username: ${{ secrets.EMAIL_USERNAME }}  # Correct parameter for SMTP username
           password: ${{ secrets.EMAIL_PASSWORD }}  # Correct parameter for SMTP password
-
-      - name: Upload Downloaded Files
-        uses: actions/upload-artifact@v4
-        with:
-          name: workspace-files
-          path: $GITHUB_WORKSPACE
