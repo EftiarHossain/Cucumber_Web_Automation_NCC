@@ -52,7 +52,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: downloaded-files
-          path: $GITHUB_WORKSPACE/downloads
+          path: $GITHUB_WORKSPACE/downloads/*
 
       # Send email with the artifact download link
       - name: Send test result email
