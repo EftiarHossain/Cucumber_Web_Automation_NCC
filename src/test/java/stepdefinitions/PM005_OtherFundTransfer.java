@@ -26,6 +26,7 @@ public class PM005_OtherFundTransfer extends Base {
         Operations.verifyElementIsPresent(PG004_FundTransfer.otherTransferDetailsToAccountField, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.otherTransferDetailsAvailableBalance, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.otherTransferDetailsAvailableBalance, driver);
+        Operations.waitForPageToLoad(driver);
     }
 
     @Then("I input To Account Number {string}, To Account Name {string}, Select Account, Select Bank, Select District, Select Branch, Select NPSB, Input transfer amount {string} below my available balance and remarks and confirm next to continue")
