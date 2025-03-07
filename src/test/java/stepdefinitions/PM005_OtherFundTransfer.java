@@ -41,6 +41,7 @@ public class PM005_OtherFundTransfer extends Base {
         Operations.click(PG004_FundTransfer.otherTransferDetailsAccountTypeSelection, driver);
         Operations.click(PG004_FundTransfer.otherTransferDetailsAccountTypeSelectionAccount, driver);
 
+        Operations.sleep(3000);
         Operations.click(PG004_FundTransfer.otherTransferDetailsBankSelectionField, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.otherTransferDetailsSelectedBank, driver);
         Operations.click(PG004_FundTransfer.otherTransferDetailsSelectedBank, driver);
@@ -80,7 +81,9 @@ public class PM005_OtherFundTransfer extends Base {
 
         Operations.click(PG004_FundTransfer.otherTransferDetailsAccountTypeSelection, driver);
         Operations.click(PG004_FundTransfer.otherTransferDetailsAccountTypeSelectionCard, driver);
+        Operations.verifyElementIsPresent(PG004_FundTransfer.otherTransferDetailsBankSelectionField, driver);
 
+        Operations.sleep(3000);
         Operations.click(PG004_FundTransfer.otherTransferDetailsBankSelectionField, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.otherTransferDetailsSelectedBank, driver);
         Operations.click(PG004_FundTransfer.otherTransferDetailsSelectedBank, driver);
@@ -120,6 +123,7 @@ public class PM005_OtherFundTransfer extends Base {
         Operations.click(PG004_FundTransfer.otherTransferDetailsAccountTypeSelection, driver);
         Operations.click(PG004_FundTransfer.otherTransferDetailsAccountTypeSelectionAccount, driver);
 
+        Operations.sleep(3000);
         Operations.click(PG004_FundTransfer.otherTransferDetailsBankSelectionField, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.otherTransferDetailsSelectedBank, driver);
         Operations.click(PG004_FundTransfer.otherTransferDetailsSelectedBank, driver);
@@ -160,6 +164,7 @@ public class PM005_OtherFundTransfer extends Base {
         Operations.click(PG004_FundTransfer.otherTransferDetailsAccountTypeSelection, driver);
         Operations.click(PG004_FundTransfer.otherTransferDetailsAccountTypeSelectionCard, driver);
 
+        Operations.sleep(3000);
         Operations.click(PG004_FundTransfer.otherTransferDetailsBankSelectionField, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.otherTransferDetailsSelectedBank, driver);
         Operations.click(PG004_FundTransfer.otherTransferDetailsSelectedBank, driver);
