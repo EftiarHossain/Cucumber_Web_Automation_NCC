@@ -38,4 +38,42 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cucumber-reports
-          path: target/cucumber-html-report.html/
+          path: target/cucumber-html-report.html
+
+      # Get the artifact URL using GitHub API
+      - name: Get Artifact URL
+        id: get_url
+        run: |
+          # Using the GitHub API to get the URL for the uploaded artifact
+          ARTIFACT_URL=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/${{ github.repository }}/actions/artifacts | \
+            jq -r '.artifacts[] | select(.name=="cucumber-reports") | .archive_download_url')
+          
+          # Store the URL as an output variable for later use
+          echo "Artifact URL: $ARTIFACT_URL"
+          echo "ARTIFACT_URL=$ARTIFACT_URL" >> $GITHUB_ENV
+
+      # Display the link in the logs
+      - name: Display Artifact URL in Logs
+        run: |
+          echo "Cucumber HTML Report Link: ${{ env.ARTIFACT_URL }}"
+
+      # Send email with the artifact download link
+      - name: Send test result email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          from: ${{ secrets.EMAIL_USERNAME }}
+          to: ${{ secrets.RECIPIENT_EMAIL }}
+          subject: "Cucumber Test Results"
+          body: |
+            Hello,
+
+            The Cucumber test run has completed. You can download the Cucumber HTML report here:
+
+            [Download Cucumber HTML Report](${{ env.ARTIFACT_URL }})
+
+          smtp-server: smtp.gmail.com
+          smtp-port: 587
+          smtp-username: ${{ secrets.EMAIL_USERNAME }}
+          smtp-password: ${{ secrets.EMAIL_PASSWORD }}
+
