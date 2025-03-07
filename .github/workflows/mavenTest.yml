@@ -63,12 +63,9 @@ jobs:
 
             The AB Retail Web Smoke test run has completed. You can download the HTML report here:
 
-            [Download Cucumber HTML Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts)
-            Upload Artifact Log:
-            ${{ env.artifact_upload_log }}
+            [View GitHub Actions Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
           server_address: smtp.gmail.com  # Correct parameter for SMTP server
           server_port: 587  # Correct parameter for SMTP port
           username: ${{ secrets.EMAIL_USERNAME }}  # Correct parameter for SMTP username
           password: ${{ secrets.EMAIL_PASSWORD }}  # Correct parameter for SMTP password
-
