@@ -45,14 +45,14 @@ jobs:
           name: cucumber-reports
           path: target/cucumber-html-report.html
 
-      - name: Check Downloaded Files
-        run: ls -al /github/workspace/downloads
+      - name: List Downloaded Files
+        run: ls -al $GITHUB_WORKSPACE/downloads
 
       - name: Upload Downloaded Files
         uses: actions/upload-artifact@v4
         with:
           name: downloaded-files
-          path: /github/workspace/downloads
+          path: $GITHUB_WORKSPACE/downloads
 
       # Send email with the artifact download link
       - name: Send test result email

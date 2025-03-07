@@ -100,8 +100,9 @@ public class PM003_OwnFundTransfer extends Base {
     }
 
     @Then("I can navigate to home clicking Go To Home")
-    public void iCanNavigateToHome() {
+    public void iCanNavigateToHome() throws InterruptedException {
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferGoToHome, driver);
+        Operations.sleep(2000);
         Operations.click(PG004_FundTransfer.fundTransferGoToHome, driver);
         Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardAccountTab, driver);
         Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardAccountTab, driver);
