@@ -70,6 +70,7 @@ public class PM003_OwnFundTransfer extends Base {
 
     @Then("I can see transaction confirmation screen with success or fail status and the details of the transactions")
     public void iCanSeeTransactionConfirmationScreen() {
+        Operations.waitForPageToLoad(driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferGoToHome, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferGoToHome, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferDownloadReceipt, driver);

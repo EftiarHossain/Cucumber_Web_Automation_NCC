@@ -42,15 +42,6 @@ jobs:
           name: cucumber-reports
           path: target/cucumber-html-report.html
 
-      - name: Capture upload artifact log
-        id: capture_log
-        run: |
-          echo "Upload Artifact Log:"
-          echo "Artifact upload completed. Logs captured."  # You can replace this with more detailed logs if needed
-          echo "Artifact Upload Log: ${{ steps.upload_report.outputs }}" >> $GITHUB_ENV  # Save logs to environment variable for later use
-          continue-on-error: true  # Ensure this step does not fail the job
-
-
       # Send email with the artifact download link
       - name: Send test result email
         uses: dawidd6/action-send-mail@v3
