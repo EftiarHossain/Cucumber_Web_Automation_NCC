@@ -42,6 +42,17 @@ jobs:
           name: cucumber-reports
           path: target/cucumber-html-report.html
 
+      - name: Get Artifact ID from GitHub API
+        id: get_artifact_id
+        run: |
+            # Use GitHub API to get artifact ID
+            artifact_url="https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts"
+            response=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" $artifact_url)
+            artifact_id=$(echo $response | jq -r '.[0].id')  # Get the ID of the first artifact
+            echo "Artifact ID: $artifact_id"
+            echo "artifact_id=$artifact_id" >> $GITHUB_ENV  # Set the artifact ID as an environment variable
+
+
       # Send email with the artifact download link
       - name: Send test result email
         uses: dawidd6/action-send-mail@v3
@@ -52,9 +63,9 @@ jobs:
           body: |
             Hello,
 
-            The Cucumber test run has completed. You can download the Cucumber HTML report here:
+            The AB Retail Web Smoke test run has completed. You can download the HTML report here:
 
-            [Download Cucumber HTML Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/${{ steps.upload_report.outputs.artifact_id }})
+            [Download Cucumber HTML Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/${{ env.artifact_id }})
 
           server_address: smtp.gmail.com  # Correct parameter for SMTP server
           server_port: 587  # Correct parameter for SMTP port
