@@ -48,12 +48,6 @@ jobs:
       - name: List Downloaded Files
         run: ls -al $GITHUB_WORKSPACE/downloads
 
-      - name: Upload Downloaded Files
-        uses: actions/upload-artifact@v4
-        with:
-          name: downloaded-files
-          path: $GITHUB_WORKSPACE/downloads/*
-
       # Send email with the artifact download link
       - name: Send test result email
         uses: dawidd6/action-send-mail@v3
@@ -72,3 +66,9 @@ jobs:
           server_port: 587  # Correct parameter for SMTP port
           username: ${{ secrets.EMAIL_USERNAME }}  # Correct parameter for SMTP username
           password: ${{ secrets.EMAIL_PASSWORD }}  # Correct parameter for SMTP password
+
+      - name: Upload Downloaded Files
+        uses: actions/upload-artifact@v4
+        with:
+          name: workspace-files
+          path: $GITHUB_WORKSPACE
