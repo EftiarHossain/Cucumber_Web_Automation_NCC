@@ -32,7 +32,7 @@ jobs:
         run: mvn -B package -DskipTests --file pom.xml  # Skip tests during build
 
       - name: Ensure Downloads Directory Exists
-        run: mkdir -p /github/workspace/downloads
+        run: mkdir -p $GITHUB_WORKSPACE/downloads
 
       - name: Run Cucumber tests with JUnit
         run: mvn -B test -Dtest=runners.TestRunner
