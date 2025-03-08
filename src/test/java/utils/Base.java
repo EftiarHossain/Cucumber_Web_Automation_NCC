@@ -27,7 +27,9 @@ public class Base {
         prefs.put("profile.content_settings.exceptions.automatic_downloads.*.setting", 1);
 
         String projectPath = System.getProperty("user.dir");  // Root of the project
-        String downloadPath = projectPath + File.separator + "downloads";  // Inside project folder        prefs.put("download.prompt_for_download", false);
+        String downloadPath = projectPath + File.separator + "downloads";  // Inside project folder
+        prefs.put("download.default_directory", downloadPath);  // Set project-based download path
+        prefs.put("download.prompt_for_download", false);
         prefs.put("download.directory_upgrade", true);
         prefs.put("safebrowsing.enabled", true);
         File downloadDir = new File(downloadPath);
