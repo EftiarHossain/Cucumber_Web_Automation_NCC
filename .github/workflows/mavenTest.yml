@@ -48,14 +48,6 @@ jobs:
       - name: List Downloaded Files
         run: ls -al $GITHUB_WORKSPACE/downloads
 
-      - name: Debug Before Uploading
-        run: |
-            echo "Checking Downloads Directory..."
-            ls -al $GITHUB_WORKSPACE/downloads || echo "Directory not found!"
-
-      - name: Check Available Files
-        run: find $GITHUB_WORKSPACE -type f
-
       - name: Upload Downloaded Files
         uses: actions/upload-artifact@v4
         with:
