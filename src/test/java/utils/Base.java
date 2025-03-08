@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.File;
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.HashMap;
@@ -25,10 +26,14 @@ public class Base {
         prefs.put("profile.default_content_settings.popups", 0);
         prefs.put("profile.content_settings.exceptions.automatic_downloads.*.setting", 1);
 
-        prefs.put("download.default_directory", System.getProperty("user.dir") + "/downloads");  // Relative to workspace
-        prefs.put("download.prompt_for_download", false);
+        String projectPath = System.getProperty("user.dir");  // Root of the project
+        String downloadPath = projectPath + File.separator + "downloads";  // Inside project folder        prefs.put("download.prompt_for_download", false);
         prefs.put("download.directory_upgrade", true);
         prefs.put("safebrowsing.enabled", true);
+        File downloadDir = new File(downloadPath);
+        if (!downloadDir.exists()) {
+            downloadDir.mkdirs();  // Create directory if it doesn't exist
+        }
 
         options.setExperimentalOption("prefs", prefs);
         WebDriverManager.chromedriver().setup();
