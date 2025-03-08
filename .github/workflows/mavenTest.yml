@@ -1,6 +1,8 @@
 name: Java CI
 
 on:
+  schedule:
+    - cron: "0 10 * * *"  # Runs every day at 1:00 AM UTC (7:00 AM UTC+6)
   push:
     branches:
       - main
@@ -72,3 +74,10 @@ jobs:
           server_port: 587  # Correct parameter for SMTP port
           username: ${{ secrets.EMAIL_USERNAME }}  # Correct parameter for SMTP username
           password: ${{ secrets.EMAIL_PASSWORD }}  # Correct parameter for SMTP password
+
+      - name: Send notification to Teams
+        run: |
+          curl -H "Content-Type: application/json" -d '{
+            "title": "Cucumber Test Run Completed",
+            "text": "The AB Retail Web Smoke test run has completed. You can download the HTML report here: [View GitHub Actions Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+          }' ${{ secrets.TEAMS_WEBHOOK_URL }}
