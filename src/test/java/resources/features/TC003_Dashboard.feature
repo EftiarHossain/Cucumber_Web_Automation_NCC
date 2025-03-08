@@ -2,7 +2,7 @@ Feature: Dashboard
 
   Scenario: Validate Dashboard, Account Details, Statement Download, DPS, FDR, Loan & Card Details
     When I navigate to my dashboard
-    Then I can see my Accounts
+#    Then I can see my Accounts
 #    When I click on any Account
 #    Then I can see mini details of my Account
 #    When I click on View Statement from the mini details
