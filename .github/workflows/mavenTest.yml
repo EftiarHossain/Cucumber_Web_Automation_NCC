@@ -62,7 +62,7 @@ jobs:
         with:
           from: ${{ secrets.EMAIL_USERNAME }}
           to: ${{ secrets.RECIPIENT_EMAIL }}
-          subject: "Cucumber Test Results"
+          subject: "ABBL Smoke Test Results"
           body: |
             Hello,
 
