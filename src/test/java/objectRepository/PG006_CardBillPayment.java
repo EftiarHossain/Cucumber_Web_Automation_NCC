@@ -20,7 +20,7 @@ public class PG006_CardBillPayment {
 
     public static By ownCardDetailsScreenTitle = By.xpath("//h1[normalize-space()='Own Card Details']");
     public static By withinCardDetailsScreenTitle = By.xpath("//h1[normalize-space()='Within Bank Card Details']");
-    public static By otherCardDetailsScreenTitle = By.xpath("//h1[normalize-space()='Within Bank Card Details']]");
+    public static By otherCardDetailsScreenTitle = By.xpath("//h1[normalize-space()='Other Bank Card Details']");
     public static By lankaCardDetailsScreenTitle = By.xpath("//h1[normalize-space()='Lanka Bangla Credit Card Details']");
 
     public static By selectFromAccount = By.xpath("//span[normalize-space()='--Select Account--']");
@@ -33,12 +33,15 @@ public class PG006_CardBillPayment {
     public static By ownPaymentAmountOther = By.xpath("//input[@placeholder='Enter Your Amount']");
 
     public static By selectCardTypeWithin = By.xpath("//span[normalize-space()='--Select Card Type--']");
+    public static By selectBankOther = By.xpath("//span[normalize-space()='--Select Bank-']");
+    public static By selectedBankOther = By.xpath("//span[normalize-space()='Al-Arafah Islami Bank Limited']");
     public static By selectedCardType = By.xpath("//span[normalize-space()='World']");
     public static By selectedCardTypeLanka = By.xpath("//span[normalize-space()='VISA']");
 
     public static By enterCardNumber = By.xpath("//input[@placeholder='Enter Card Number']");
     public static By enterCardHolderName = By.xpath("//input[@placeholder='Enter Card Holder Name']");
     public static By transferDetailsPaymentAmount = By.xpath("//input[@placeholder='Enter Payment Amount']");
+    public static By transferDetailsPaymentAmountOther = By.xpath("//input[@placeholder='Enter payment amount']");
 
     public static By paymentRemarks = By.xpath("//input[@placeholder='Remarks']");
 
@@ -48,8 +51,8 @@ public class PG006_CardBillPayment {
     public static By transferDetailsToastContainer = By.xpath("//div[@id='toast-container']");
 
     public static By withinCardPaymentReviewPageTitle = By.xpath("//h1[normalize-space()='Within Bank Card Review']");
-    public static By otherCardPaymentReviewPageTitle = By.xpath("//h1[normalize-space()='Within Bank Card Review']");
-    public static By lankaCardPaymentReviewPageTitle = By.xpath("//h1[normalize-space()='Lanka Bangla Credit Card Details']");
+    public static By otherCardPaymentReviewPageTitle = By.xpath("//h1[normalize-space()='Other Bank Card Review']");
+    public static By lankaCardPaymentReviewPageTitle = By.xpath("//h1[normalize-space()='Lanka Bangla Credit Card Review']");
     public static By ownCardPaymentReviewPageTitle = By.xpath("//h1[normalize-space()='Own Card Review']");
 
     public static By withinTransferType = By.xpath("//li[normalize-space()='Within Bank Card']");
