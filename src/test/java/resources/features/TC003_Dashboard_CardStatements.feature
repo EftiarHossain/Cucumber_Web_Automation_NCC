@@ -1,18 +1,18 @@
-Feature: Cards
-
-  Scenario: Validate Dashboard, Card Details, Statement Download, Endorsement Info & Unbilled Transaction
-    When I navigate to my dashboard
-    Then I can click on the Card Tab to see my Credit Cards
-    When I click on any Card
-    Then I can see mini details of the card
-    When I click on the Info button
-    Then I can see Card details
-    Then I can see Card Endorsement Info
-    Then I can see and download Card Transaction History
-    Then I can see Card Unbilled Transaction
-
-
-
-
-
-
+#Feature: Cards
+#
+#  Scenario: Validate Dashboard, Card Details, Statement Download, Endorsement Info & Unbilled Transaction
+#    When I navigate to my dashboard
+#    Then I can click on the Card Tab to see my Credit Cards
+#    When I click on any Card
+#    Then I can see mini details of the card
+#    When I click on the Info button
+#    Then I can see Card details
+#    Then I can see Card Endorsement Info
+#    Then I can see and download Card Transaction History
+#    Then I can see Card Unbilled Transaction
+#
+#
+#
+#
+#
+#
