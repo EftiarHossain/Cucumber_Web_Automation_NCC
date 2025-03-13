@@ -75,7 +75,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}  # Correct parameter for SMTP username
           password: ${{ secrets.EMAIL_PASSWORD }}  # Correct parameter for SMTP password
 
-      - name: Send notification to Teams
+      - name: Send notification to the Teams
         run: |
           curl -H "Content-Type: application/json" -d '{
             "title": "Cucumber Test Run Completed",
