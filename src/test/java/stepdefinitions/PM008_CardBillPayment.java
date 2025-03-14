@@ -47,6 +47,8 @@ public class PM008_CardBillPayment extends Base {
         Operations.verifyElementIsPresent(PG006_CardBillPayment.paymentRemarks, driver);
         Operations.click(PG006_CardBillPayment.paymentRemarks, driver);
         Operations.sendText(PG006_CardBillPayment.paymentRemarks,"AutomatedTest", driver);
+        Operations.click(PG006_CardBillPayment.transferDetailsPaymentAmount, driver);
+        Operations.click(PG006_CardBillPayment.paymentRemarks, driver);
         Operations.waitUntilElementIsClickable(PG006_CardBillPayment.paymentDetailsNextButton, driver);
         Operations.click(PG006_CardBillPayment.paymentDetailsNextButton, driver);
     }
@@ -154,6 +156,8 @@ public class PM008_CardBillPayment extends Base {
         Operations.verifyElementIsPresent(PG006_CardBillPayment.paymentRemarks, driver);
         Operations.click(PG006_CardBillPayment.paymentRemarks, driver);
         Operations.sendText(PG006_CardBillPayment.paymentRemarks,"AutomatedTest", driver);
+        Operations.click(PG006_CardBillPayment.transferDetailsPaymentAmount, driver);
+        Operations.click(PG006_CardBillPayment.paymentRemarks, driver);
         Operations.waitUntilElementIsClickable(PG006_CardBillPayment.paymentDetailsNextButton, driver);
         Operations.click(PG006_CardBillPayment.paymentDetailsNextButton, driver);
     }
@@ -193,11 +197,13 @@ public class PM008_CardBillPayment extends Base {
         Operations.verifyElementIsPresent(PG006_CardBillPayment.selectPaymentAmountOther, driver);
         Operations.click(PG006_CardBillPayment.selectPaymentAmountOther, driver);
         Operations.verifyElementIsPresent(PG006_CardBillPayment.transferDetailsPaymentAmountOwn, driver);
+        Operations.click(PG006_CardBillPayment.transferDetailsPaymentAmountOwn, driver);
         Operations.sendText(PG006_CardBillPayment.transferDetailsPaymentAmountOwn, paymentAmount, driver);
-        Operations.click(PG006_CardBillPayment.ownCardDetailsScreenTitle, driver);
         Operations.verifyElementIsPresent(PG006_CardBillPayment.paymentRemarks, driver);
         Operations.click(PG006_CardBillPayment.paymentRemarks, driver);
         Operations.sendText(PG006_CardBillPayment.paymentRemarks,remarks, driver);
+        Operations.click(PG006_CardBillPayment.transferDetailsPaymentAmountOwn, driver);
+        Operations.click(PG006_CardBillPayment.paymentRemarks, driver);
         Operations.waitUntilElementIsClickable(PG006_CardBillPayment.paymentDetailsNextButton, driver);
         Operations.click(PG006_CardBillPayment.paymentDetailsNextButton, driver);
     }
