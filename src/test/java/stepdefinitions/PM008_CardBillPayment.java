@@ -173,4 +173,48 @@ public class PM008_CardBillPayment extends Base {
         Operations.click(PG006_CardBillPayment.paymentOTPInputNext, driver);
     }
 
+    @Then("I navigated to the own credit card details screen for own card bill payment and select a from account and available balance populated")
+    public void iNavigatedToTheTransferDetailsScreenOwnCard() throws InterruptedException {
+        Operations.verifyElementIsPresent(PG006_CardBillPayment.cardBillPaymentTitle, driver);
+        Operations.click(PG006_CardBillPayment.selectOwnCardBillPayment, driver);
+        Operations.click(PG006_CardBillPayment.cardOwnSelect, driver);
+        Operations.waitUntilElementIsVisible(PG006_CardBillPayment.ownCardDetailsScreenTitle, driver);
+        Operations.verifyElementIsPresent(PG006_CardBillPayment.ownCardDetailsScreenTitle, driver);
+        Operations.sleep(3000);
+        Operations.click(PG006_CardBillPayment.selectFromAccount, driver);
+        Operations.waitUntilElementIsVisible(PG006_CardBillPayment.selectFromAccountFirstOne, driver);
+        Operations.click(PG006_CardBillPayment.selectFromAccountFirstOne, driver);
+    }
+
+    @Then("I select To Currency, Select payment amount, Input Payment Amount {string}, Remarks {string} and confirm next to continue")
+    public void iFilledTransferDetailsScreenForOwn(String paymentAmount, String remarks) {
+        Operations.verifyElementIsPresent(PG006_CardBillPayment.selectPaymentAmount, driver);
+        Operations.click(PG006_CardBillPayment.selectPaymentAmount, driver);
+        Operations.verifyElementIsPresent(PG006_CardBillPayment.selectPaymentAmountOther, driver);
+        Operations.click(PG006_CardBillPayment.selectPaymentAmountOther, driver);
+        Operations.verifyElementIsPresent(PG006_CardBillPayment.transferDetailsPaymentAmountOwn, driver);
+        Operations.sendText(PG006_CardBillPayment.transferDetailsPaymentAmountOwn, paymentAmount, driver);
+        Operations.click(PG006_CardBillPayment.ownCardDetailsScreenTitle, driver);
+        Operations.verifyElementIsPresent(PG006_CardBillPayment.paymentRemarks, driver);
+        Operations.click(PG006_CardBillPayment.paymentRemarks, driver);
+        Operations.sendText(PG006_CardBillPayment.paymentRemarks,remarks, driver);
+        Operations.waitUntilElementIsClickable(PG006_CardBillPayment.paymentDetailsNextButton, driver);
+        Operations.click(PG006_CardBillPayment.paymentDetailsNextButton, driver);
+    }
+
+    @Then("I can see transaction review screen for Own Card Payment, select currency, select OTP channel, accept the terms and click confirm to continue by OTP verification {string}")
+    public void iCanSeeTransactionScreenVerifyOTPOwnFT(String OTP) throws InterruptedException {
+        Operations.waitUntilElementIsVisible(PG006_CardBillPayment.ownCardPaymentReviewPageTitle, driver);
+        Operations.verifyElementIsPresent(PG006_CardBillPayment.ownCardPaymentReviewPageTitle, driver);
+        Operations.click(PG006_CardBillPayment.paymentAuthenticationTypeSMS, driver);
+        Operations.click(PG006_CardBillPayment.paymentTermsAndConditionCheckbox, driver);
+        Operations.click(PG006_CardBillPayment.OwnPaymentConfirmSendOTPButton, driver);
+        Operations.waitUntilElementIsVisible(PG006_CardBillPayment.paymentOTPInput, driver);
+        Operations.verifyElementIsPresent(PG006_CardBillPayment.paymentOTPInput, driver);
+        Operations.sendText(PG006_CardBillPayment.paymentOTPInput,OTP, driver);
+        Operations.sleep(3000);
+        Operations.waitUntilElementIsClickable(PG006_CardBillPayment.paymentOTPInputNext, driver);
+        Operations.click(PG006_CardBillPayment.paymentOTPInputNext, driver);
+    }
+
 }

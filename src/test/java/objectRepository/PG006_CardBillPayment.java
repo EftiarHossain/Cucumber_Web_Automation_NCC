@@ -42,6 +42,7 @@ public class PG006_CardBillPayment {
     public static By enterCardHolderName = By.xpath("//input[@placeholder='Enter Card Holder Name']");
     public static By transferDetailsPaymentAmount = By.xpath("//input[@placeholder='Enter Payment Amount']");
     public static By transferDetailsPaymentAmountOther = By.xpath("//input[@placeholder='Enter payment amount']");
+    public static By transferDetailsPaymentAmountOwn = By.xpath("//input[@placeholder='Enter Your Amount']");
 
     public static By paymentRemarks = By.xpath("//input[@placeholder='Remarks']");
 
