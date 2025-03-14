@@ -2,7 +2,7 @@ name: Java CI
 
 on:
   schedule:
-    - cron: "0 1 * * *"  # Runs every day at 1:00 AM UTC (7:00 AM UTC+6)
+    - cron: "0 12 * * *"  # Runs every day at 1:00 AM UTC (7:00 AM UTC+6)
   push:
     branches:
       - main
