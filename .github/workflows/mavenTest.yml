@@ -66,7 +66,7 @@ jobs:
           body: |
             Hello,
 
-            The AB Retail Web Smoke test run has completed. You can download the HTML report here:
+            The AB Retail Web Smoke test run has  completed. You can download the HTML report here:
 
             [View GitHub Actions Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
