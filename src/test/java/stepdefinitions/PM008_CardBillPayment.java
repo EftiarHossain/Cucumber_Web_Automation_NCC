@@ -204,6 +204,7 @@ public class PM008_CardBillPayment extends Base {
         Operations.sendText(PG006_CardBillPayment.paymentRemarks,remarks, driver);
         Operations.click(PG006_CardBillPayment.transferDetailsPaymentAmountOwn, driver);
         Operations.click(PG006_CardBillPayment.paymentRemarks, driver);
+        Operations.sendText(PG006_CardBillPayment.paymentRemarks,remarks, driver);
         Operations.waitUntilElementIsClickable(PG006_CardBillPayment.paymentDetailsNextButton, driver);
         Operations.click(PG006_CardBillPayment.paymentDetailsNextButton, driver);
     }
