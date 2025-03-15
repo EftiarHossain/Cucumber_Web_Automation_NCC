@@ -188,6 +188,9 @@ public class PM008_CardBillPayment extends Base {
         Operations.click(PG006_CardBillPayment.selectFromAccount, driver);
         Operations.waitUntilElementIsVisible(PG006_CardBillPayment.selectFromAccountFirstOne, driver);
         Operations.click(PG006_CardBillPayment.selectFromAccountFirstOne, driver);
+        Operations.click(PG006_CardBillPayment.selectToAccountCurrency, driver);
+        Operations.click(PG006_CardBillPayment.toAccountCurrencySelectionBDT, driver);
+
     }
 
     @Then("I select To Currency, Select payment amount, Input Payment Amount {string}, Remarks {string} and confirm next to continue")
