@@ -56,16 +56,6 @@ jobs:
           name: workspace-files
           path: /Users/runner/work/Cucumber_maven/Cucumber_maven/downloads/*
 
-      - name: List Screenshot Files
-        run: ls -al $GITHUB_WORKSPACE/screenshots
-
-      - name: Upload Screenshot Files
-        uses: actions/upload-artifact@v4
-        with:
-          name: workspace-files
-          path: /Users/runner/work/Cucumber_maven/Cucumber_maven/screenshots/*
-          overwrite: trues
-
       # Send email with the artifact download link
       - name: Send test result email
         uses: dawidd6/action-send-mail@v3

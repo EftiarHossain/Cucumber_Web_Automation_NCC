@@ -22,37 +22,39 @@ public class Hooks {
         WebDriver driver = Base.driver;  // Access driver from Base class without inheritance
 
         if (scenario.isFailed() && driver != null) { // Capture screenshot only if scenario fails
-            captureScreenshot(scenario.getName(), driver);
+            captureScreenshotAndAttachToReport(scenario, driver);
         }
     }
 
-    public void captureScreenshot(String scenarioName, WebDriver driver) {
+    public void captureScreenshotAndAttachToReport(Scenario scenario, WebDriver driver) {
         try {
-            // Get the screenshot
-            File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            // Get the screenshot as a byte array
+            byte[] screenshotBytes = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 
-            // Generate a unique name for the screenshot
-            String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-            String screenshotName = scenarioName.replaceAll(" ", "_") + "_" + timestamp + ".png";
+            // Attach the screenshot to the Cucumber report
+            scenario.attach(screenshotBytes, "image/png", scenario.getName());
 
-            // Define the path where screenshots will be saved
-            Path screenshotPath = Paths.get(System.getProperty("user.dir"), "screenshots", screenshotName);
+            // Save the screenshot as a file
+            saveScreenshotFile(screenshotBytes, scenario.getName());
 
-            // Ensure that the directory exists
-            File screenshotDirectory = screenshotPath.getParent().toFile();
-            if (!screenshotDirectory.exists()) {
-                // Create the directory if it doesn't exist
-                boolean created = screenshotDirectory.mkdirs();
-                if (created) {
-                    System.out.println("Directory created: " + screenshotDirectory);
-                }
-            }
-
-            // Copy the screenshot file to the defined path
-            Files.copy(screenshot.toPath(), screenshotPath);
-            System.out.println("Screenshot saved: " + screenshotPath.toString());
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void saveScreenshotFile(byte[] screenshotBytes, String scenarioName) throws IOException {
+        // Generate a unique name for the screenshot
+        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String screenshotName = scenarioName.replaceAll(" ", "_") + "_" + timestamp + ".png";
+
+        // Define the path where screenshots will be saved
+        Path screenshotPath = Paths.get(System.getProperty("user.dir"), "screenshots", screenshotName);
+
+        // Ensure that the directory exists
+        Files.createDirectories(screenshotPath.getParent());
+
+        // Save the screenshot file
+        Files.write(screenshotPath, screenshotBytes);
+        System.out.println("Screenshot saved: " + screenshotPath.toString());
     }
 }
