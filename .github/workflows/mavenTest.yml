@@ -64,7 +64,7 @@ jobs:
         with:
           name: workspace-files
           path: /Users/runner/work/Cucumber_maven/Cucumber_maven/screenshots/*
-          overwrite: trues
+          overwrite: true
 
       # Send email with the artifact download link
       - name: Send test result email
