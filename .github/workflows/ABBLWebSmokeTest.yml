@@ -61,12 +61,12 @@ jobs:
         uses: dawidd6/action-send-mail@v3
         with:
           from: ${{ secrets.EMAIL_USERNAME }}
-          to: ${{ secrets.RECIPIENT_EMAIL }}
+          to: ${{ secrets.RECIPIENT_EMAIL }},${{ secrets.RECIPIENT_EMAIL_2 }},${{ secrets.RECIPIENT_EMAIL_3 }},${{ secrets.RECIPIENT_EMAIL_4 }},${{ secrets.RECIPIENT_EMAIL_5 }},${{ secrets.RECIPIENT_EMAIL_6 }},${{ secrets.RECIPIENT_EMAIL_7 }},${{ secrets.RECIPIENT_EMAIL_8 }}
           subject: "ABBL Smoke Test Results"
           body: |
             Hello,
 
-            The AB Retail Web Smoke test run has completed. You can download the HTML report here:
+            The AB Retail Web Smoke test run has completed. You can download the HTML report and Transactions Receipt here:
 
             [View GitHub Actions Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
