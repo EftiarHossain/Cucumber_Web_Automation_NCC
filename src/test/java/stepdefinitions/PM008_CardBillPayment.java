@@ -202,6 +202,7 @@ public class PM008_CardBillPayment extends Base {
         Operations.verifyElementIsPresent(PG006_CardBillPayment.transferDetailsPaymentAmountOwn, driver);
         Operations.click(PG006_CardBillPayment.transferDetailsPaymentAmountOwn, driver);
         Operations.sendText(PG006_CardBillPayment.transferDetailsPaymentAmountOwn, paymentAmount, driver);
+        Operations.tab(PG006_CardBillPayment.transferDetailsPaymentAmountOwn, driver);
         Operations.verifyElementIsPresent(PG006_CardBillPayment.paymentRemarks, driver);
         Operations.click(PG006_CardBillPayment.paymentRemarks, driver);
         Operations.sendText(PG006_CardBillPayment.paymentRemarks,remarks, driver);

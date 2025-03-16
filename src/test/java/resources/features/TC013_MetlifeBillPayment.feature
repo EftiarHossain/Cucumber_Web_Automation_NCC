@@ -1,7 +1,6 @@
 Feature: Metlife Bill Payment
 
   Scenario: Verify Successful Metlife Bill Payment
-    Then I navigate to my dashboard
     When I navigate to "https://abdirectcloud.abbl.com/project/bank-account"
     Then I navigate to my dashboard
     Then I navigate to the Bill Payment

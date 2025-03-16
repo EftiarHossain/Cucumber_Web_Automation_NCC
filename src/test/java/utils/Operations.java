@@ -50,6 +50,12 @@ public class Operations {
         WebElement el = findElement(locator, driver);
             el.sendKeys(Keys.RETURN);
     }
+
+    public static void tab(By locator, WebDriver driver) {
+
+        WebElement el = findElement(locator, driver);
+        el.sendKeys(Keys.TAB);
+    }
     
 
     public static void sendText(By locator, String text, WebDriver driver){
