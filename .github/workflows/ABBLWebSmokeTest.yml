@@ -61,7 +61,7 @@ jobs:
         uses: dawidd6/action-send-mail@v3
         with:
           from: ${{ secrets.EMAIL_USERNAME }}
-          to: ${{ secrets.RECIPIENT_EMAIL }},${{ secrets.RECIPIENT_EMAIL_2 }},${{ secrets.RECIPIENT_EMAIL_3 }},${{ secrets.RECIPIENT_EMAIL_4 }},${{ secrets.RECIPIENT_EMAIL_5 }},${{ secrets.RECIPIENT_EMAIL_6 }},${{ secrets.RECIPIENT_EMAIL_7 }},${{ secrets.RECIPIENT_EMAIL_8 }}
+          to: ${{ secrets.RECIPIENT_EMAIL }},${{ secrets.RECIPIENT_EMAIL_2 }},${{ secrets.RECIPIENT_EMAIL_3 }},${{ secrets.RECIPIENT_EMAIL_4 }},${{ secrets.RECIPIENT_EMAIL_5 }},${{ secrets.RECIPIENT_EMAIL_6 }}
           subject: "ABBL Smoke Test Results"
           body: |
             Hello,
