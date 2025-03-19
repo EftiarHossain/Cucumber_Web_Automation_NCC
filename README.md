@@ -1,9 +1,10 @@
-This project is a Selenium automation framework using Cucumber with Java and Maven. It follows the Page Object Model (POM) for better maintainability and scalability.
+# Selenium Cucumber Maven Project
 
-📁 Project Structure
-bash
-Copy
-Edit
+This project is a **Selenium automation framework** using **Cucumber** with **Java** and **Maven**. It follows the **Page Object Model (POM)** for better maintainability and scalability.
+
+## 📁 Project Structure
+
+```
 src/test/java
 │── objectRepository/       # Stores Object Repository classes for UI elements
 │   ├── PG005_TopUpPayment.java
@@ -30,57 +31,62 @@ src/test/java
 │── utils/                  # Utility classes for common functions
 │   ├── Base.java
 │   ├── Operations.java
-🔹 Technologies Used
-Selenium WebDriver - UI automation
-Cucumber - BDD framework
-Java - Programming language
-Maven - Dependency management
-JUnit/TestNG - Test execution
-🚀 How to Run the Tests
-Clone the Repository
+```
 
-sh
-Copy
-Edit
-git clone <repository_url>
-cd cucumber_maven
-Install Dependencies
+## 🔹 Technologies Used
 
-sh
-Copy
-Edit
-mvn clean install
-Run Tests Using Maven
+- **Selenium WebDriver** - UI automation
+- **Cucumber** - BDD framework
+- **Java** - Programming language
+- **Maven** - Dependency management
+- **JUnit/TestNG** - Test execution
 
-sh
-Copy
-Edit
-mvn test
-Run Specific Feature File
+## 🚀 How to Run the Tests
 
-sh
-Copy
-Edit
-mvn test -Dcucumber.options="src/test/resources/features/TC002_Login.feature"
-🛠 Key Components
-Object Repository (objectRepository/)
-Stores page objects for better code reusability.
+1. **Clone the Repository**  
+   ```sh
+   git clone <repository_url>
+   ```
 
-Feature Files (resources/features/)
-Contains Gherkin syntax (Given-When-Then) for BDD scenarios.
+2. **Install Dependencies**  
+   ```sh
+   mvn clean install
+   ```
 
-Step Definitions (stepdefinitions/)
-Implements test steps for feature files.
+3. **Run Tests Using Maven**  
+   ```sh
+   mvn test
+   ```
 
-Runner (runners/)
-Configures Cucumber execution.
+4. **Run Specific Feature File**  
+   ```sh
+   mvn test -Dcucumber.options="src/test/resources/features/TC002_Login.feature"
+   ```
 
-Utilities (utils/)
-Contains helper classes like Base.java for setup and teardown.
+## 🛠 Key Components
 
-📊 Reports and Logs
-After test execution, reports are generated under:
-bash
-Copy
-Edit
-target/cucumber-reports/
+- **Object Repository (`objectRepository/`)**  
+  Stores page objects for better code reusability.
+
+- **Feature Files (`resources/features/`)**  
+  Contains Gherkin syntax (`Given-When-Then`) for BDD scenarios.
+
+- **Step Definitions (`stepdefinitions/`)**  
+  Implements test steps for feature files.
+
+- **Runner (`runners/`)**  
+  Configures Cucumber execution.
+
+- **Utilities (`utils/`)**  
+  Contains helper classes like `Base.java` for setup and teardown.
+
+## 📊 Reports and Logs
+
+- After test execution, reports are generated under:
+  ```
+  target/cucumber-reports/
+  ```
+
+---
+
+This structure ensures maintainability, scalability, and efficiency in test automation. 🚀 Happy Testing! 🎯
