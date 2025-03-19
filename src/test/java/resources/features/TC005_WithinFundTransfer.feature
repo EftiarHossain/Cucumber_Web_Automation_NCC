@@ -1,6 +1,15 @@
 Feature: Within ABBL Fund Transfer
 
   Scenario: Verify Successful WithIn Account FT
+    Given I open the browser
+    When I navigate to "https://abdirectcloud.abbl.com/welcome-page"
+    Then I should see the page title "ABDirect"
+    When I click on the Login Button
+    Then I navigate to the Login Page and can see login title "Log In to Your Account"
+    When I login with "eftitestcard" and "123456@Aa"
+    Then I should see OTP Channel Selection Modal for Device Binding "We found a new device, would you like to bind it to continue?"
+    When I verify 2fa Successfully With SMS "1111"
+    Then I navigate to my dashboard
     When I navigate to "https://abdirectcloud.abbl.com/project/bank-account"
     Then I navigate to my dashboard
     Then I navigate to the Within Account Fund Transfer
