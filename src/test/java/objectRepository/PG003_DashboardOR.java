@@ -26,10 +26,10 @@ public class PG003_DashboardOR {
 
     public static By dashboardAccountsStatementTitle = By.xpath("//h1[contains(text(),'Account Statement')]");
     public static By dashboardAccountsStatementPageAccNumberDropdown = By.xpath("//body/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-statement[1]/div[1]/div[1]/form[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[2]/div[1]");
-    public static By dashboardAccountsStatementSelectDateRange = By.xpath("//body/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-statement[1]/div[1]/div[1]/form[1]/div[1]/div[2]/mat-form-field[1]/div[1]/div[2]/div[1]");
-    public static By dashboardAccountsStatementSelectDateRangeCustom = By.xpath("//mat-option[@id='mat-option-5']");
-    public static By dashboardAccountsStatementFromDate = By.cssSelector("#mat-input-0");
-    public static By dashboardAccountsStatementToDate = By.cssSelector("#mat-input-1");
+    public static By dashboardAccountsStatementSelectDateRange = By.xpath("//span[normalize-space()='Select Date Range']");
+    public static By dashboardAccountsStatementSelectDateRangeCustom = By.xpath("//label[normalize-space()='Custom']");
+    public static By dashboardAccountsStatementFromDate = By.xpath("//input[@placeholder='From Date']");
+    public static By dashboardAccountsStatementToDate = By.xpath("//input[@placeholder='To Date']");
     public static By dashboardAccountsStatementSubmitBtn = By.xpath("//button[contains(text(),'Submit')]");
     public static By dashboardAccountsStatementDownloadBtn = By.xpath("//button[contains(text(),'Download Statement')]");
     public static By dashboardAccountsStatementShareBtn = By.xpath("//button[contains(text(),'Share To Email')]");
@@ -39,6 +39,7 @@ public class PG003_DashboardOR {
 
     public static By dashboardCardsDetailsTitle = By.xpath("//h1[contains(text(),'CARD Details')]");
     public static By dashboardCardsDetailsEndorsement = By.xpath("//button[contains(text(),'Endorsement Info')]");
+    public static By dashboardCardEndorsementBack = By.xpath("//button[contains(text(),//button[normalize-space()='Back']");
     public static By dashboardCardsDetailsHistory = By.xpath("//button[contains(text(),'Transaction History')]");
     public static By dashboardCardsDetailsUnbilled = By.xpath("//button[contains(text(),'Unbilled Transaction')]");
 

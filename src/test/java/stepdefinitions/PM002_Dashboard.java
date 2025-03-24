@@ -107,14 +107,19 @@ public class PM002_Dashboard extends Base {
     public void iCanSeeEndorsementInfo() {
         Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardCardsDetailsEndorsement, driver);
         Operations.click(PG003_DashboardOR.dashboardCardsDetailsEndorsement, driver);
+        if (Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardCardEndorsementBack, driver)){
+            Operations.click(PG003_DashboardOR.dashboardCardEndorsementBack, driver);
+        }
+
     }
 
     @Then("I can see and download Card Transaction History")
-    public void iCanSeeTransactionHistory() {
+    public void iCanSeeTransactionHistory() throws InterruptedException {
         Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardCardsDetailsHistory, driver);
         Operations.click(PG003_DashboardOR.dashboardCardsDetailsHistory, driver);
         Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardCardsTransactionHistory, driver);
         Operations.click(PG003_DashboardOR.dashboardCardsTransactionHistoryDownload, driver);
+        Operations.sleep(3000);
         Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardCardsTransactionHistoryDownloadPdf, driver);
         Operations.click(PG003_DashboardOR.dashboardCardsTransactionHistoryDownloadPdf, driver);
         Operations.click(PG003_DashboardOR.dashboardCardsTransactionHistoryDownloadExcel, driver);
