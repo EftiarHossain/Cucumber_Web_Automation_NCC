@@ -119,10 +119,12 @@ public class PM002_Dashboard extends Base {
         Operations.click(PG003_DashboardOR.dashboardCardsDetailsHistory, driver);
         Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardCardsTransactionHistory, driver);
         Operations.click(PG003_DashboardOR.dashboardCardsTransactionHistoryDownload, driver);
-        Operations.sleep(3000);
+        Operations.sleep(2000);
         Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardCardsTransactionHistoryDownloadPdf, driver);
         Operations.click(PG003_DashboardOR.dashboardCardsTransactionHistoryDownloadPdf, driver);
+        Operations.sleep(2000);
         Operations.click(PG003_DashboardOR.dashboardCardsTransactionHistoryDownloadExcel, driver);
+        Operations.sleep(2000);
         Operations.click(PG003_DashboardOR.dashboardCardsTransactionHistoryDownloadCancel, driver);
         Operations.click(PG003_DashboardOR.dashboardCardsTransactionHistoryBack, driver);
     }
