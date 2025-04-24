@@ -49,7 +49,7 @@ public class PM001_SplashAndLogin extends Base {
         Operations.matchText(PG002_LoginPageOR.deviceBindingModalTitle, expectedDeviceBindingTitle, driver);
     }
 
-    @When ("I verify 2fa Successfully With SMS")
+    @When ("I verify 2fa Successfully With Email")
     public void iVerify2faSuccessfullyWithSMS() throws Exception {
         Operations.click(PG002_LoginPageOR.deviceBindingOTPTypeEmail, driver);
         Operations.click(PG002_LoginPageOR.deviceBindingOTPNextBtn, driver);

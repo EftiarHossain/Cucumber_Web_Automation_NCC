@@ -7,5 +7,5 @@ Feature: Login
     Then I can see the app logo
     When I login with "asif" and "123456@Aa"
     Then I should see OTP Channel Selection Modal for Device Binding "We have found a new device. Would you like to bind it to continue?"
-    When I verify 2fa Successfully With SMS
+    When I verify 2fa Successfully With Email
     Then I navigate to my dashboard
