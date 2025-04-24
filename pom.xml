@@ -21,6 +21,14 @@
         <artifactId>selenium-java</artifactId>
         <version>4.10.0</version>
     </dependency>
+
+    <!-- JSON Parsing Dependency -->
+    <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20230227</version>
+    </dependency>
+
     <dependency>
         <groupId>io.github.bonigarcia</groupId>
         <artifactId>webdrivermanager</artifactId>

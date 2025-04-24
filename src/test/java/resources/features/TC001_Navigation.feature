@@ -2,7 +2,7 @@ Feature: Splash & Login
 
   Scenario: Verify navigate to ABDirect Splash & Login and titles of the pages
     Given I open the browser
-    When I navigate to "https://abdirectcloud.abbl.com/welcome-page"
-    Then I should see the page title "ABDirect"
-    When I click on the Login Button
-    Then I navigate to the Login Page and can see login title "Log In to Your Account"
+    When I navigate to "https://ibwebuat.nccbank.com.bd/sign-in"
+    Then I should see the page title "NCC Always"
+    Then I can see the app logo
+

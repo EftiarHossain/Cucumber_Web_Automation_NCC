@@ -7,6 +7,7 @@ import objectRepository.PG002_LoginPageOR;
 import objectRepository.PG001_SplashPageOR;
 import objectRepository.PG003_DashboardOR;
 import utils.Base;
+import utils.MailosaurOTP;
 import utils.Operations;
 
 public class PM001_SplashAndLogin extends Base {
@@ -27,14 +28,9 @@ public class PM001_SplashAndLogin extends Base {
         assert actualTitle.equals(expectedTitle) : "Page title mismatch";
     }
 
-    @When("I click on the Login Button")
-    public void iClickOnTheLoginButton() {
-        Operations.click(PG001_SplashPageOR.loginButton, driver);
-    }
-
-    @Then("I navigate to the Login Page and can see login title {string}")
-    public void iNavigateToTheLoginPage(String expectedTitle) {
-        Operations.matchText(PG002_LoginPageOR.loginTitle, expectedTitle, driver);
+    @When("I can see the app logo")
+    public void iSeeTheAppLogo() {
+        Operations.verifyElementIsPresent(PG001_SplashPageOR.appLogo, driver);
     }
 
     @When("I login with {string} and {string}")
@@ -53,12 +49,15 @@ public class PM001_SplashAndLogin extends Base {
         Operations.matchText(PG002_LoginPageOR.deviceBindingModalTitle, expectedDeviceBindingTitle, driver);
     }
 
-    @When ("I verify 2fa Successfully With SMS {string}")
-    public void iVerify2faSuccessfullyWithSMS(String OTP) {
-        Operations.click(PG002_LoginPageOR.deviceBindingOTPTypeSMS, driver);
+    @When ("I verify 2fa Successfully With SMS")
+    public void iVerify2faSuccessfullyWithSMS() throws Exception {
+        Operations.click(PG002_LoginPageOR.deviceBindingOTPTypeEmail, driver);
         Operations.click(PG002_LoginPageOR.deviceBindingOTPNextBtn, driver);
         Operations.verifyElementIsPresent(PG002_LoginPageOR.otpVerificationTitle, driver);
         Operations.click(PG002_LoginPageOR.otpInputField, driver);
+        Operations.sleep(20000);
+        String OTP = MailosaurOTP.getOTP();
+        System.out.println("OTP: " + OTP);
         Operations.sendText(PG002_LoginPageOR.otpInputField, OTP, driver);
         Operations.waitUntilElementIsClickable(PG002_LoginPageOR.otpConfirmBtn, driver);
         Operations.click(PG002_LoginPageOR.otpConfirmBtn, driver);
