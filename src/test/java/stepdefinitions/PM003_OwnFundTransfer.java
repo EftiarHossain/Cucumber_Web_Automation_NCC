@@ -103,8 +103,8 @@ public class PM003_OwnFundTransfer extends Base {
     public void iCanNavigateToHome() {
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferGoToHome, driver);
         Operations.click(PG004_FundTransfer.fundTransferGoToHome, driver);
-        Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardAccountTab, driver);
-        Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardAccountTab, driver);
+        Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardAccountTabConventional, driver);
+        Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardAccountTabConventional, driver);
     }
 
 

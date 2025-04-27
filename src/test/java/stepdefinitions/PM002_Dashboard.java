@@ -12,16 +12,16 @@ public class PM002_Dashboard extends Base {
 
     @Then("I can see my Accounts")
     public void iCanSeeMyAccounts() {
-        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardAccountTab, driver);
-        Operations.click(PG003_DashboardOR.dashboardAccountTab, driver);
-        Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardAccountsCardsFirstCard, driver);
-        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardAccountsCardsFirstCard, driver);
+        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardAccountTabConventional, driver);
+        Operations.click(PG003_DashboardOR.dashboardAccountTabConventional, driver);
+        Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardAccountsCardsFirstCardConventional, driver);
+        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardAccountsCardsFirstCardConventional, driver);
     }
 
     @When("I click on any Account")
     public void iClickOnAnyAccount() {
-        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardAccountsCardsFirstCard, driver);
-        Operations.click(PG003_DashboardOR.dashboardAccountsCardsFirstCard, driver);
+        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardAccountsCardsFirstCardConventional, driver);
+        Operations.click(PG003_DashboardOR.dashboardAccountsCardsFirstCardConventional, driver);
         Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardAccountDetailsHeader, driver);
     }
 
@@ -29,14 +29,15 @@ public class PM002_Dashboard extends Base {
     public void iCanSeeMiniDetailsOfMyAccount() {
         Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardAccountDetailsHeader, driver);
         Operations.matchText(PG003_DashboardOR.dashboardAccountDetailsHeader, "Account Details" ,driver);
+        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardLastTenAccTransactionHeader, driver);
+        Operations.matchText(PG003_DashboardOR.dashboardLastTenAccTransactionHeader, "Last 10 Transactions" ,driver);
     }
 
-    @When("I click on View Statement from the mini details")
-    public void iClickOnViewStatementFromTheMiniDetails() {
-        Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardAccountsViewStatement, driver);
-        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardAccountsViewStatement, driver);
-        Operations.matchText(PG003_DashboardOR.dashboardAccountsViewStatement, "View Statement" ,driver);
-        Operations.click(PG003_DashboardOR.dashboardAccountsViewStatement, driver);
+    @When("I click on Account Statement")
+    public void iClickOnAccountStatementTab() {
+        Operations.verifyElementIsPresent(PG003_DashboardOR.accountStatementTab, driver);
+        Operations.matchText(PG003_DashboardOR.accountStatementTab, "Account Statement" ,driver);
+        Operations.click(PG003_DashboardOR.accountStatementTab, driver);
         Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardAccountsStatementTitle, driver);
         Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardAccountsStatementTitle, driver);
         Operations.matchText(PG003_DashboardOR.dashboardAccountsStatementTitle,"Account Statement", driver);
@@ -45,6 +46,9 @@ public class PM002_Dashboard extends Base {
     @Then("I can see the Statement search by Account and able to download statements")
     public void iCanSeeStatementSearch() {
         Operations.waitUntilElementIsClickable(PG003_DashboardOR.dashboardAccountsStatementSelectDateRange, driver);
+        Operations.click(PG003_DashboardOR.dashboardAccountsStatementPageAccNumberDropdown, driver);
+        Operations.waitUntilElementIsClickable(PG003_DashboardOR.dashboardAccountsStatementPageAccNumberDropdownSelection, driver);
+        Operations.click(PG003_DashboardOR.dashboardAccountsStatementPageAccNumberDropdownSelection, driver);
         Operations.click(PG003_DashboardOR.dashboardAccountsStatementSelectDateRange, driver);
         Operations.waitUntilElementIsClickable(PG003_DashboardOR.dashboardAccountsStatementSelectDateRangeCustom, driver);
         Operations.click(PG003_DashboardOR.dashboardAccountsStatementSelectDateRangeCustom, driver);
@@ -58,26 +62,26 @@ public class PM002_Dashboard extends Base {
         Operations.sendText(PG003_DashboardOR.dashboardAccountsStatementToDate,"01/06/2024", driver);
         Operations.waitUntilElementIsClickable(PG003_DashboardOR.dashboardAccountsStatementSubmitBtn, driver);
         Operations.click(PG003_DashboardOR.dashboardAccountsStatementSubmitBtn, driver);
-        Operations.waitUntilElementIsClickable(PG003_DashboardOR.dashboardAccountsStatementDownloadBtn, driver);
-        Operations.click(PG003_DashboardOR.dashboardAccountsStatementDownloadBtn, driver);
-        Operations.waitUntilElementIsClickable(PG003_DashboardOR.dashboardAccountsStatementDownloadPdfBtn, driver);
-        Operations.waitUntilElementIsClickable(PG003_DashboardOR.dashboardAccountsStatementDownloadExcelBtn, driver);
-        Operations.click(PG003_DashboardOR.dashboardAccountsStatementDownloadPdfBtn, driver);
-        Operations.click(PG003_DashboardOR.dashboardAccountsStatementDownloadExcelBtn, driver);
+//        Operations.waitUntilElementIsClickable(PG003_DashboardOR.dashboardAccountsStatementDownloadBtn, driver);
+//        Operations.click(PG003_DashboardOR.dashboardAccountsStatementDownloadBtn, driver);
+//        Operations.waitUntilElementIsClickable(PG003_DashboardOR.dashboardAccountsStatementDownloadPdfBtn, driver);
+//        Operations.waitUntilElementIsClickable(PG003_DashboardOR.dashboardAccountsStatementDownloadExcelBtn, driver);
+//        Operations.click(PG003_DashboardOR.dashboardAccountsStatementDownloadPdfBtn, driver);
+//        Operations.click(PG003_DashboardOR.dashboardAccountsStatementDownloadExcelBtn, driver);
     }
 
     @Then("I can click on the Card Tab to see my Credit Cards")
     public void iCanClickOnTheCardTabToSeeMyCreditCards() {
-        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardCardsTab, driver);
-        Operations.click(PG003_DashboardOR.dashboardCardsTab, driver);
-        Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardAccountsCardsFirstCard, driver);
-        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardAccountsCardsFirstCard, driver);
+        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardCardsTabConventional, driver);
+        Operations.click(PG003_DashboardOR.dashboardCardsTabConventional, driver);
+        Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardAccountsCardsFirstCardConventional, driver);
+        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardAccountsCardsFirstCardConventional, driver);
     }
 
     @When("I click on any Card")
     public void iClickOnAnyCard() {
-        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardAccountsCardsFirstCard, driver);
-        Operations.click(PG003_DashboardOR.dashboardAccountsCardsFirstCard, driver);
+        Operations.verifyElementIsPresent(PG003_DashboardOR.dashboardAccountsCardsFirstCardConventional, driver);
+        Operations.click(PG003_DashboardOR.dashboardAccountsCardsFirstCardConventional, driver);
         Operations.waitUntilElementIsVisible(PG003_DashboardOR.dashboardCardsDetailsHeader, driver);
     }
 

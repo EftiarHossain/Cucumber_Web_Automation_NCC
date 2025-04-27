@@ -5,17 +5,22 @@ import org.openqa.selenium.By;
 public class PG003_DashboardOR {
     public static By dashboardNavBar = By.xpath("//span[contains(text(),'Dashboard')]");
 
-    public static By dashboardAccountTab = By.xpath("//mat-tab-header/div[1]/div[1]/div[1]/div[1]/span[2]/span[1]");
-    public static By dashboardFixedDepositTab = By.xpath("//span[contains(text(),'Fixed Deposit')]");
-    public static By dashboardDPSTab = By.xpath("//span[contains(text(),'DPS')]");
-    public static By dashboardLoanTab = By.xpath("//span[contains(text(),'Loan')]");
-    public static By dashboardCardsTab = By.xpath("//span[contains(text(),'Cards')]");
+    public static By dashboardAccountTabConventional = By.xpath("//span[contains(text(),'Accounts')]");
+    public static By dashboardFixedDepositTabConventional = By.xpath("//span[contains(text(),'FDR/DPS')]");
+    public static By dashboardWalletTabConventional = By.xpath("//span[contains(text(),'Wallet')]");
+    public static By dashboardLoanTabConventional = By.xpath("//span[contains(text(),'Loans')]");
+    public static By dashboardCardsTabConventional = By.xpath("//span[contains(text(),'Cards')]");
 
-    public static By dashboardAccountsCardsFirstCard = By.xpath("//mat-tab-body/div[1]/div[1]/div[1]/div[1]/fuse-card[1]/div[1]/div[1]/div[1]");
-    public static By viewDetailsBtn = By.xpath("//mat-tab-body/div[1]/div[1]/div[1]/div[1]/fuse-card[1]/div[1]/div[3]/div[2]/button[1]");
+    public static By dashboardAccountsCardsFirstCardConventional = By.xpath("//img[@alt='Card 1']");
+    public static By SeeBalanceBtn = By.xpath("(//span[contains(text(),'Tap to see balance')])[1]");
 
 
     public static By dashboardAccountDetailsHeader = By.xpath("//h1[contains(text(),'Account Details')]");
+    public static By dashboardLastTenAccTransactionHeader = By.xpath("//p[normalize-space()='Last 10 Transactions']");
+    public static By accountStatementTab = By.xpath("//span[normalize-space()='Account Statement']");
+
+
+
     public static By dashboardFixedDepositDetailsHeader = By.xpath("//h1[contains(text(),'Fixed Deposit Account Details')]");
     public static By dashboardDPSDetailsHeader = By.xpath("//h1[contains(text(),'DPS Account Details')]");
     public static By dashboardLoanDetailsHeader = By.xpath("//h1[contains(text(),'Loan Account Details')]");
@@ -24,8 +29,11 @@ public class PG003_DashboardOR {
 
     public static By dashboardCardsViewDetails = By.xpath("//mat-icon[contains(text(),'info')]");
 
-    public static By dashboardAccountsStatementTitle = By.xpath("//h1[contains(text(),'Account Statement')]");
-    public static By dashboardAccountsStatementPageAccNumberDropdown = By.xpath("//body/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-statement[1]/div[1]/div[1]/form[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[2]/div[1]");
+    public static By dashboardAccountsStatementTitle = By.xpath("//h1[normalize-space()='Account Statement']");
+
+    public static By dashboardAccountsStatementPageAccNumberDropdown = By.xpath("//span[normalize-space()='--Select Account--']");
+    public static By dashboardAccountsStatementPageAccNumberDropdownSelection = By.xpath("//body//div//mat-option[1]");
+
     public static By dashboardAccountsStatementSelectDateRange = By.xpath("//span[normalize-space()='Select Date Range']");
     public static By dashboardAccountsStatementSelectDateRangeCustom = By.xpath("//label[normalize-space()='Custom']");
     public static By dashboardAccountsStatementFromDate = By.xpath("//input[@placeholder='From Date']");
