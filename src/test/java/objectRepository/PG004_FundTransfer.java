@@ -21,8 +21,10 @@ public class PG004_FundTransfer {
 
     public static By ownAccountListFirstAccount = By.xpath("//body/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own[1]/div[1]/div[1]/form[1]/div[1]/div[3]/div[1]/button[1]");
     public static By ownAccountListSecondAccount = By.xpath("//body/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/button[1]");
+    public static By withinTransferFromAccountDropdown = By.xpath("//mat-select[@role='combobox']//div//div//div//*[name()='svg']");
+    //public static By withinTransferFromAccount = By.xpath("//span[contains(text(),'" + accountName + "')]");
 
-    public static By transferDetailsScreenTitle = By.xpath("//h1[contains(text(),'Transfer Details')]");
+    public static By transferDetailsScreenTitle = By.xpath("//h1[normalize-space()='NCC Bank Account Transfer']");
     public static By ownTransferDetailsToAccount = By.xpath("//body/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own-details[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]");
     public static By withinTransferDetailsToAccountField = By.xpath("//input[@placeholder='Enter To Account']");
     public static By otherTransferDetailsToAccountField = By.xpath("//input[@placeholder='Enter To Account/Card Number']");
@@ -57,35 +59,36 @@ public class PG004_FundTransfer {
     public static By transferDetailsCancelButton = By.xpath("//button[contains(text(),'Cancel')]");
     public static By transferDetailsToastContainer = By.xpath("//div[@id='toast-container']");
 
-    public static By fundTransferReviewPageTitle = By.xpath("//h1[contains(text(),'Transfer Details Review')]");
+    public static By fundTransferReviewPageTitle = By.xpath("//h1[normalize-space()='Review']");
     public static By ownFundTransferTransferType = By.xpath("//li[contains(text(),'Own Account')]");
     public static By fundTransferAuthenticationTypeSMS = By.xpath("//label[contains(text(),'SMS')]");
-    public static By fundTransferAuthenticationTypeEmail = By.xpath("//label[contains(text(),'Email')]");
+    public static By fundTransferAuthenticationTypeEmail = By.xpath("//label[normalize-space()='Email']");
     public static By fundTransferTermsAndConditionLink = By.xpath("//span[contains(text(),'Terms & Conditions')]");
     public static By ownFundTransferTermsAndConditionCheckbox = By.xpath("//body[1]/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own-details[1]/div[1]/div[1]/form[1]/div[4]/div[1]/div[1]/mat-checkbox[1]/div[1]/div[1]/input[1]");
     public static By fundTransferTermsAndConditionCheckbox = By.xpath("//input[@type='checkbox']");
 
     public static By fundTransferTermsAndConditionDialogue = By.xpath("//body/div[2]/div[2]/div[1]/mat-dialog-container[1]/div[1]/div[1]");
 
+    public static By fundTransferSendOtpButton = By.xpath("//button[normalize-space()='Send OTP']");
     public static By fundTransferOTPInput = By.xpath("//span[1]//input[1]");
     public static By fundTransferResendOTP = By.xpath("//strong[contains(text(),'Resend OTP')]");
-    public static By fundTransferOTPInputNext = By.xpath("//body/div[2]/div[2]/div[1]/mat-dialog-container[1]/div[1]/div[1]/app-otp-dialog-fund-transfer[1]/div[2]/div[1]/button[2]");
+    public static By fundTransferTransferBtn = By.xpath("//button[normalize-space()='Transfer']");
     public static By mFSFundTransferOTPInputNext = By.xpath("//button[normalize-space()='Next']");
     public static By fundTransferOTPInputCancel = By.xpath("//body/div[2]/div[2]/div[1]/mat-dialog-container[1]/div[1]/div[1]/app-otp-dialog-fund-transfer[1]/div[2]/div[1]/button[1]");
 
     public static By ownFundTransferSuccessScreenTransferType = By.xpath("//body[1]/div[2]/div[2]/div[1]/mat-dialog-container[1]/div[1]/div[1]/app-otp-dialog-fund-transfer[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/div[1]/li[2]");
     public static By ownFundTransferTransactionID = By.xpath("//body[1]/div[2]/div[2]/div[1]/mat-dialog-container[1]/div[1]/div[1]/app-otp-dialog-fund-transfer[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/div[2]/li[2]");
 
-    public static By fundTransferGoToHome = By.xpath("//button[contains(text(),'Go to Home')]");
+    public static By fundTransferGoToHome = By.xpath("//*[@id=\"mat-mdc-dialog-0\"]/div/div/app-otp-dialog-fund-transfer/div[2]/div[2]/button[1]");
 
-    public static By fundTransferAddToFavourite = By.xpath("//button[contains(text(),'Add to Favourite')]");
+    public static By fundTransferAddToFavourite = By.xpath("//*[@id=\"mat-mdc-dialog-0\"]/div/div/app-otp-dialog-fund-transfer/div[2]/button");
 
-    public static By fundTransferDownloadReceipt = By.xpath("//button[contains(text(),'Download Receipt')]");
+    public static By fundTransferDownloadReceipt = By.xpath("//*[@id=\"mat-mdc-dialog-0\"]/div/div/app-otp-dialog-fund-transfer/div[2]/div[2]/button[2]");
 
-    public static By fundTransferAddFavouriteTitle = By.xpath("//h2[contains(text(),'Add Favourite')]");
+    public static By fundTransferAddFavouriteTitle = By.xpath("//*[@id=\"mat-mdc-dialog-1\"]/div/div/div/h2");
     public static By fundTransferAddFavouriteSubTitle = By.xpath("//p[contains(text(),'Enter the name of your favourite:')]");
-    public static By fundTransferAddFavouriteInputField = By.xpath("//*[@id=\"mat-mdc-dialog-1\"]/div/div/mat-dialog-content/input");
-    public static By fundTransferAddFavouriteSaveButton = By.xpath("//button[contains(text(),'Save')]");
+    public static By fundTransferAddFavouriteInputField = By.xpath("//*[@id=\"mat-mdc-dialog-1\"]/div/div/div/mat-dialog-content/input");
+    public static By fundTransferAddFavouriteSaveButton = By.xpath("//button[contains(text(),'Submit')]");
 
     public static By fundTransferAddFavouriteToast = By.xpath("//div[@id='toast-container']");
 
