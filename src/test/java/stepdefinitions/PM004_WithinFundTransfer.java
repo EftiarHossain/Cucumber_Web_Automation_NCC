@@ -21,7 +21,7 @@ public class PM004_WithinFundTransfer extends Base {
     @Then("I click on Continue Without Beneficiary to Transfer Money")
     public void iClickOnContinueWithoutBeneficiary() {
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferTitle, driver);
-        Operations.click(PG004_FundTransfer.continueWithoutBeneficiaryBtn, driver);
+        Operations.click(PG004_FundTransfer.oneTimePayBtn, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.transferDetailsScreenTitle, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.transferDetailsScreenTitle, driver);
     }

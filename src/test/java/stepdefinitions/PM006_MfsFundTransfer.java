@@ -21,7 +21,7 @@ public class PM006_MfsFundTransfer extends Base {
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.mfsTransferTitle, driver);
         Operations.waitForPageToLoad(driver);
         Operations.sleep(5000);
-        Operations.click(PG004_FundTransfer.continueWithoutBeneficiaryBtn, driver);
+        Operations.click(PG004_FundTransfer.oneTimePayBtn, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.transferDetailsScreenTitle, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.transferDetailsScreenTitle, driver);
     }

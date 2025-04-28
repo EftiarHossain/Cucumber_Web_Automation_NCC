@@ -5,6 +5,7 @@ import io.cucumber.java.en.When;
 import objectRepository.PG003_DashboardOR;
 import objectRepository.PG004_FundTransfer;
 import utils.Base;
+import utils.MailosaurOTP;
 import utils.Operations;
 
 public class PM003_OwnFundTransfer extends Base {
@@ -54,8 +55,8 @@ public class PM003_OwnFundTransfer extends Base {
         Operations.click(PG004_FundTransfer.transferDetailsNextButton, driver);
     }
 
-    @Then("I can see transaction details screen, select OTP channel, accept the terms and confirm next to continue by OTP verification {string}")
-    public void iCanSeeTransactionScreenVerifyOTP(String OTP) {
+    @Then("I can see transaction details screen, select OTP channel, accept the terms and confirm next to continue by OTP verification")
+    public void iCanSeeTransactionScreenVerifyOTP() throws Exception {
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferReviewPageTitle, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferReviewPageTitle, driver);
         Operations.click(PG004_FundTransfer.fundTransferAuthenticationTypeSMS, driver);
@@ -63,6 +64,9 @@ public class PM003_OwnFundTransfer extends Base {
         Operations.click(PG004_FundTransfer.transferDetailsNextButton, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferOTPInput, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferOTPInput, driver);
+        Thread.sleep(20000);
+        String OTP = MailosaurOTP.getOTP();
+        System.out.println("OTP: " + OTP);
         Operations.sendText(PG004_FundTransfer.fundTransferOTPInput,OTP, driver);
         Operations.waitUntilElementIsClickable(PG004_FundTransfer.fundTransferOTPInputNext, driver);
         Operations.click(PG004_FundTransfer.fundTransferOTPInputNext, driver);

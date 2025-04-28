@@ -17,7 +17,7 @@ public class PG004_FundTransfer {
     public static By continueWithFavourite = By.xpath("//h1[contains(text(),'Continue With Favourite')]");
     public static By ownAccountSearchField = By.xpath("//body[1]/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/form[1]/mat-form-field[1]/div[1]/div[2]/div[2]/input[1]");
     public static By beneficiarySearchField = By.xpath("//input[@placeholder='Search Beneficiary']");
-    public static By continueWithoutBeneficiaryBtn = By.xpath("//h1[contains(text(),'Continue without Beneficiary')]");
+    public static By oneTimePayBtn = By.xpath("//h1[normalize-space()='One Time Pay']");
 
     public static By ownAccountListFirstAccount = By.xpath("//body/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own[1]/div[1]/div[1]/form[1]/div[1]/div[3]/div[1]/button[1]");
     public static By ownAccountListSecondAccount = By.xpath("//body/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/button[1]");
