@@ -59,17 +59,16 @@ public class PM003_OwnFundTransfer extends Base {
     public void iCanSeeTransactionScreenVerifyOTP() throws Exception {
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferReviewPageTitle, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferReviewPageTitle, driver);
-        Operations.click(PG004_FundTransfer.fundTransferAuthenticationTypeSMS, driver);
-        Operations.click(PG004_FundTransfer.fundTransferTermsAndConditionCheckbox, driver);
-        Operations.click(PG004_FundTransfer.transferDetailsNextButton, driver);
+        Operations.click(PG004_FundTransfer.fundTransferAuthenticationTypeEmail, driver);
+        Operations.click(PG004_FundTransfer.fundTransferSendOtpButton, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferOTPInput, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferOTPInput, driver);
         Thread.sleep(20000);
         String OTP = MailosaurOTP.getOTP();
         System.out.println("OTP: " + OTP);
         Operations.sendText(PG004_FundTransfer.fundTransferOTPInput,OTP, driver);
-        Operations.waitUntilElementIsClickable(PG004_FundTransfer.fundTransferOTPInputNext, driver);
-        Operations.click(PG004_FundTransfer.fundTransferOTPInputNext, driver);
+        Operations.waitUntilElementIsClickable(PG004_FundTransfer.fundTransferTransferBtn, driver);
+        Operations.click(PG004_FundTransfer.fundTransferTransferBtn, driver);
     }
 
     @Then("I can see transaction confirmation screen with success or fail status and the details of the transactions")
@@ -91,6 +90,7 @@ public class PM003_OwnFundTransfer extends Base {
     @Then("I can add the transaction to favourite {string}")
     public void iCanAddTransactionToFavourite(String favName) {
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferAddToFavourite, driver);
+        Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferAddToFavourite, driver);
         Operations.click(PG004_FundTransfer.fundTransferAddToFavourite, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferAddFavouriteTitle, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferAddFavouriteInputField, driver);
