@@ -84,7 +84,7 @@ public class PG004_FundTransfer {
 
     public static By fundTransferAddFavouriteTitle = By.xpath("//h2[contains(text(),'Add Favourite')]");
     public static By fundTransferAddFavouriteSubTitle = By.xpath("//p[contains(text(),'Enter the name of your favourite:')]");
-    public static By fundTransferAddFavouriteInputField = By.xpath("//input[@placeholder='Favourite Name']");
+    public static By fundTransferAddFavouriteInputField = By.xpath("//*[@id=\"mat-mdc-dialog-1\"]/div/div/mat-dialog-content/input");
     public static By fundTransferAddFavouriteSaveButton = By.xpath("//button[contains(text(),'Save')]");
 
     public static By fundTransferAddFavouriteToast = By.xpath("//div[@id='toast-container']");
