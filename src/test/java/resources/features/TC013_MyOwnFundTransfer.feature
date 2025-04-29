@@ -18,6 +18,6 @@
 #    Then I input transfer amount "50" below my available balance and remarks and confirm next to continue
 #    Then I can see transaction details screen, select OTP channel, accept the terms and confirm next to continue by OTP verification "1111"
 #    Then I can see transaction confirmation screen with success or fail status and the details of the transactions
-##    Then I can download the transaction receipt
+#    Then I can download the transaction receipt
 #    Then I can add the transaction to favourite "OwnFT"
 #    Then I can navigate to home clicking Go To Home

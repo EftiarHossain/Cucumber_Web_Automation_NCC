@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import io.cucumber.java.en.Then;
 import objectRepository.PG004_FundTransfer;
+import org.openqa.selenium.By;
 import utils.Base;
 import utils.Operations;
 
@@ -9,6 +10,8 @@ public class PM006_MfsFundTransfer extends Base {
 
     @Then("I navigate to the MFS Fund Transfer")
     public void iNavigateToTheMFSAccountFundTransfer() {
+        Operations.waitUntilElementIsVisible(PG004_FundTransfer.navBarFundTransfer, driver);
+        Operations.click(PG004_FundTransfer.navBarFundTransfer, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.navBarMFSFundTransfer, driver);
         Operations.click(PG004_FundTransfer.navBarMFSFundTransfer, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.mfsTransferTitle, driver);
@@ -22,22 +25,28 @@ public class PM006_MfsFundTransfer extends Base {
         Operations.waitForPageToLoad(driver);
         Operations.sleep(5000);
         Operations.click(PG004_FundTransfer.oneTimePayBtn, driver);
-        Operations.waitUntilElementIsVisible(PG004_FundTransfer.transferDetailsScreenTitle, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.transferDetailsScreenTitle, driver);
+        Operations.waitUntilElementIsVisible(PG004_FundTransfer.mfsTransferDetailsScreenTitle, driver);
+        Operations.verifyElementIsPresent(PG004_FundTransfer.mfsTransferDetailsScreenTitle, driver);
     }
 
     @Then("I navigated to the transfer details screen for MFS bKash FT with a selected from account and available balance populated")
     public void iNavigatedToTheTransferDetailsScreenMFSFT() {
-        Operations.waitUntilElementIsVisible(PG004_FundTransfer.transferDetailsScreenTitle, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.transferDetailsScreenTitle, driver);
+        Operations.waitUntilElementIsVisible(PG004_FundTransfer.mfsTransferDetailsScreenTitle, driver);
+        Operations.verifyElementIsPresent(PG004_FundTransfer.mfsTransferDetailsScreenTitle, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.mfsBkashToAccountInputField, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.mfsBkashToAccountInputField, driver);
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.mfsTransferDetailsAvailableBalance, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.mfsTransferDetailsAvailableBalance, driver);
     }
 
-    @Then("I input To Account Number {string} for bkash, transfer amount {string} below my available balance and remarks and confirm next to continue")
-    public void iFilledTransferDetailsScreen(String accountNumber, String amount) throws InterruptedException {
+    @Then("I select From Account Number {string}, input To Account Number {string} for bkash, transfer amount {string} below my available balance and remarks and confirm next to continue")
+    public void iFilledTransferDetailsScreen(String fromAccount, String accountNumber, String amount) throws InterruptedException {
+        Operations.waitUntilElementIsClickable(PG004_FundTransfer.mfsTransferFromAccountDropdown, driver);
+        Operations.click(PG004_FundTransfer.mfsTransferFromAccountDropdown, driver);
+        By mfsTransferFromAccount = By.xpath("//span[contains(text(),'" + fromAccount + "')]");
+        Operations.click(mfsTransferFromAccount, driver);
+        Thread.sleep(10000);
+
         Operations.verifyElementIsPresent(PG004_FundTransfer.mfsBkashToAccountInputField, driver);
         Operations.click(PG004_FundTransfer.mfsBkashToAccountInputField, driver);
         Operations.sendText(PG004_FundTransfer.mfsBkashToAccountInputField, accountNumber, driver);

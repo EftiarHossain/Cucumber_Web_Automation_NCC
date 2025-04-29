@@ -8,7 +8,7 @@ public class PG004_FundTransfer {
     public static By navBarOwnFundTransfer = By.xpath("//span[contains(text(),'Own Account')]");
     public static By navBarWithinFundTransfer = By.xpath("//span[contains(text(),'Within Bank Account')]");
     public static By navBarOtherFundTransfer = By.xpath("//span[contains(text(),'Other Bank Account')]");
-    public static By navBarMFSFundTransfer = By.xpath("//span[normalize-space()='MFS Fund Transfer']");
+    public static By navBarMFSFundTransfer = By.xpath("//span[normalize-space()='MFS']");
 
     public static By fundTransferTitle = By.xpath("//h1[contains(text(),'Fund Transfer')]");
     public static By mfsTransferTitle = By.xpath("//h1[normalize-space()='MFS Transfer']");
@@ -22,9 +22,12 @@ public class PG004_FundTransfer {
     public static By ownAccountListFirstAccount = By.xpath("//body/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own[1]/div[1]/div[1]/form[1]/div[1]/div[3]/div[1]/button[1]");
     public static By ownAccountListSecondAccount = By.xpath("//body/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/button[1]");
     public static By withinTransferFromAccountDropdown = By.xpath("//mat-select[@role='combobox']//div//div//div//*[name()='svg']");
-    //public static By withinTransferFromAccount = By.xpath("//span[contains(text(),'" + accountName + "')]");
+    public static By otherTransferFromAccountDropdown = By.xpath("//body//app-root//div//div//div//div//div//div[1]//div[1]//mat-form-field[1]//div[1]//div[2]//div[1]//mat-select[1]//div[1]//div[2]//div[1]//*[name()='svg']");
+    public static By mfsTransferFromAccountDropdown = By.xpath("//mat-select[@role='combobox']//div//div//div//*[name()='svg']");
 
     public static By transferDetailsScreenTitle = By.xpath("//h1[normalize-space()='NCC Bank Account Transfer']");
+    public static By otherTransferDetailsScreenTitle = By.xpath("//h1[normalize-space()='Other Bank Transfer']");
+    public static By mfsTransferDetailsScreenTitle = By.xpath("//h1[normalize-space()='MFS - bKash - Transfer Details']");
     public static By ownTransferDetailsToAccount = By.xpath("//body/app-root[1]/layout[1]/classy-layout[1]/div[1]/div[2]/app-bank-account-own-details[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]");
     public static By withinTransferDetailsToAccountField = By.xpath("//input[@placeholder='Enter To Account']");
     public static By otherTransferDetailsToAccountField = By.xpath("//input[@placeholder='Enter To Account/Card Number']");
@@ -40,11 +43,11 @@ public class PG004_FundTransfer {
     public static By otherTransferDetailsAccountTypeSelectionAccount = By.xpath("//span[normalize-space()='ACCOUNT']");
     public static By otherTransferDetailsAccountTypeSelectionCard = By.xpath("//span[normalize-space()='CARD']");
     public static By otherTransferDetailsBankSelectionField = By.xpath("//span[normalize-space()='--Select Bank--']");
-    public static By otherTransferDetailsSelectedBank = By.xpath("//mat-option[@role='option']//span[contains(text(),'Al-Arafah Islami Bank Limited')]");
+    public static By otherTransferDetailsSelectedBank = By.xpath("//mat-option[@role='option']//span[contains(text(),'AB BANK LTD.')]");
     public static By otherTransferDetailsDistrictSelectionField = By.xpath("//span[normalize-space()='--Select District--']");
-    public static By otherTransferDetailsSelectedDistrict = By.xpath("//mat-option[@role='option']//span[contains(text(),'BAGERHAT')]");
+    public static By otherTransferDetailsSelectedDistrict = By.xpath("//mat-option[@role='option']//span[contains(text(),'TANGAIL')]");
     public static By otherTransferDetailsBranchSelectionField = By.xpath("//span[normalize-space()='--Select Branch--']");
-    public static By otherTransferDetailsSelectedBranch = By.xpath("//mat-option[@role='option']//span[contains(text(),'BAGERHAT')]");
+    public static By otherTransferDetailsSelectedBranch = By.xpath("//mat-option[@role='option']//span[contains(text(),'TANGAIL')]");
     public static By otherTransferDetailsNPSBToggle = By.xpath("//input[@value='NPSB']");
     public static By otherTransferDetailsBFTNToggle = By.xpath("//input[@value='BEFTN']");
 

@@ -20,7 +20,7 @@ public class PM004_WithinFundTransfer extends Base {
         Operations.verifyElementIsPresent(PG004_FundTransfer.beneficiarySearchField, driver);
     }
 
-    @Then("I click on Continue Without Beneficiary to Transfer Money")
+    @Then("I click on One Time Pay to Transfer Money")
     public void iClickOnContinueWithoutBeneficiary() {
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferTitle, driver);
         Operations.click(PG004_FundTransfer.oneTimePayBtn, driver);

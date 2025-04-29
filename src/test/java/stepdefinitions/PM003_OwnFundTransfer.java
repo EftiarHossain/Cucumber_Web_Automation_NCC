@@ -85,6 +85,7 @@ public class PM003_OwnFundTransfer extends Base {
         Operations.verifyElementIsPresent(PG004_FundTransfer.fundTransferDownloadReceipt, driver);
         Operations.sleep(8000);
         Operations.click(PG004_FundTransfer.fundTransferDownloadReceipt, driver);
+        Operations.sleep(5000);
     }
 
     @Then("I can add the transaction to favourite {string}")
