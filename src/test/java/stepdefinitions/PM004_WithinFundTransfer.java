@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import utils.Base;
 import utils.Operations;
+import objectRepository.PG006_WithinFundTransferOR;
 
 public class PM004_WithinFundTransfer extends Base {
 
@@ -24,24 +25,24 @@ public class PM004_WithinFundTransfer extends Base {
     public void iClickOnContinueWithoutBeneficiary() {
         Operations.waitUntilElementIsVisible(PG004_FundTransfer.fundTransferTitle, driver);
         Operations.click(PG004_FundTransfer.oneTimePayBtn, driver);
-        Operations.waitUntilElementIsVisible(PG004_FundTransfer.transferDetailsScreenTitle, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.transferDetailsScreenTitle, driver);
+        Operations.waitUntilElementIsVisible(PG006_WithinFundTransferOR.withinTransferDetailsScreenTitle, driver);
+        Operations.verifyElementIsPresent(PG006_WithinFundTransferOR.withinTransferDetailsScreenTitle, driver);
     }
 
     @Then("I select From Account Number {string}, input To Account Number {string}, transfer amount {string} below my available balance and remarks and confirm next to continue")
     public void iFilledTransferDetailsScreen(String fromAccount, String accountNumber, String amount) throws InterruptedException {
-        Operations.waitUntilElementIsVisible(PG004_FundTransfer.transferDetailsScreenTitle, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.transferDetailsScreenTitle, driver);
-        Operations.waitUntilElementIsClickable(PG004_FundTransfer.withinTransferFromAccountDropdown, driver);
-        Operations.click(PG004_FundTransfer.withinTransferFromAccountDropdown, driver);
+        Operations.waitUntilElementIsVisible(PG006_WithinFundTransferOR.withinTransferDetailsScreenTitle, driver);
+        Operations.verifyElementIsPresent(PG006_WithinFundTransferOR.withinTransferDetailsScreenTitle, driver);
+        Operations.waitUntilElementIsClickable(PG006_WithinFundTransferOR.withinTransferFromAccountDropdown, driver);
+        Operations.click(PG006_WithinFundTransferOR.withinTransferFromAccountDropdown, driver);
         By withinTransferFromAccount = By.xpath("//span[contains(text(),'" + fromAccount + "')]");
         Operations.click(withinTransferFromAccount, driver);
         Thread.sleep(2000);
-        Operations.waitUntilElementIsVisible(PG004_FundTransfer.withinTransferDetailsAvailableBalance, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.withinTransferDetailsAvailableBalance, driver);
-        Operations.verifyElementIsPresent(PG004_FundTransfer.withinTransferDetailsToAccountField, driver);
-        Operations.click(PG004_FundTransfer.withinTransferDetailsToAccountField, driver);
-        Operations.sendText(PG004_FundTransfer.withinTransferDetailsToAccountField, accountNumber, driver);
+        Operations.waitUntilElementIsVisible(PG006_WithinFundTransferOR.withinTransferDetailsAvailableBalance, driver);
+        Operations.verifyElementIsPresent(PG006_WithinFundTransferOR.withinTransferDetailsAvailableBalance, driver);
+        Operations.verifyElementIsPresent(PG006_WithinFundTransferOR.withinTransferDetailsToAccountField, driver);
+        Operations.click(PG006_WithinFundTransferOR.withinTransferDetailsToAccountField, driver);
+        Operations.sendText(PG006_WithinFundTransferOR.withinTransferDetailsToAccountField, accountNumber, driver);
         Operations.verifyElementIsPresent(PG004_FundTransfer.transferDetailsTransferAmount, driver);
         Operations.click(PG004_FundTransfer.transferDetailsTransferAmount, driver);
         Operations.sleep(3000);

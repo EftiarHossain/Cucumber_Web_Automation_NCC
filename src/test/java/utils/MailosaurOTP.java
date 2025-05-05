@@ -9,13 +9,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MailosaurOTP {
-    private static final String API_KEY = "0ntqxbnnHoi3nnnqpLenIQIRINcq4UQt";
-    private static final String SERVER_ID = "crhkfjm1";
+    private static final String API_KEY = "SccuAeNfOiJt0rOI1hgv8WHA8DKJYlnj";
+    private static final String SERVER_ID = "0wqbne0z";
     private static final String BASE_URL = "https://mailosaur.com/api/";
 
     public static String getOTP() throws Exception {
         // Step 1: Define the unique email address
-        String email = "afternoon-younger@crhkfjm1.mailosaur.net";
+        String email = "notice-bound@0wqbne0z.mailosaur.net";
 
         // Step 2: Retrieve OTP from Mailosaur
         String id = fetchID(email);
