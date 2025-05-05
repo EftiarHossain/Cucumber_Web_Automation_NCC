@@ -2,7 +2,7 @@ package objectRepository;
 
 import org.openqa.selenium.By;
 
-public class PG005_TopUpPayment {
+public class PG009_TopUpPayment {
 
     public static By navBarTopUp = By.xpath("//span[normalize-space()='Top Up']");
 

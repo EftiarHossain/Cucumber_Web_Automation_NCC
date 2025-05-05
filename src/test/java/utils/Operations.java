@@ -22,7 +22,7 @@ import static org.junit.Assert.assertThat;
 
 public class Operations {
 
-    static WebElement findElement(By path, WebDriver driver){
+    public static WebElement findElement(By path, WebDriver driver){
         WebElement el = driver.findElement(path);
         return el;
     }

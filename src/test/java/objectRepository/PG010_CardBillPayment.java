@@ -2,7 +2,7 @@ package objectRepository;
 
 import org.openqa.selenium.By;
 
-public class PG006_CardBillPayment {
+public class PG010_CardBillPayment {
 
     public static By navBarPayment = By.xpath("//span[normalize-space()='Payments']");
     public static By navBarCreditCardBillPayment = By.xpath("//span[normalize-space()='Credit Card Bill Payment']");
