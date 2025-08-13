@@ -47,6 +47,8 @@ public class PM001_SplashAndLogin extends Base {
     @Then ("I should see OTP Channel Selection Modal for Device Binding {string}")
     public void iShouldSeeOTPChannelSelectionForDeviceBinding(String expectedDeviceBindingTitle) {
         Operations.matchText(PG002_LoginPageOR.deviceBindingModalTitle, expectedDeviceBindingTitle, driver);
+        Operations.click(PG002_LoginPageOR.deviceBindingOTPTypeEmail, driver);
+        Operations.click(PG002_LoginPageOR.deviceBindingOTPNextBtn, driver);
     }
 
     @When ("I verify 2fa Successfully With Email")
@@ -62,6 +64,15 @@ public class PM001_SplashAndLogin extends Base {
         Operations.waitUntilElementIsClickable(PG002_LoginPageOR.otpConfirmBtn, driver);
         Operations.click(PG002_LoginPageOR.otpConfirmBtn, driver);
 
+    }
+
+    @When("I verify 2fa Successfully With SMS {string}")
+    public void iVerify2faSuccessfullyWithSMS(String OTP) throws Exception {
+        Operations.waitUntilElementIsVisible(PG002_LoginPageOR.EnterOTP, driver);
+        Operations.verifyElementIsPresent(PG002_LoginPageOR.EnterOTP, driver);
+        Operations.sendText(PG002_LoginPageOR.EnterOTP, OTP, driver);
+        Operations.waitUntilElementIsClickable(PG002_LoginPageOR.otpConfirmBtn, driver);
+        Operations.click(PG002_LoginPageOR.otpConfirmBtn, driver);
     }
 
     @Then("I navigate to my dashboard")
