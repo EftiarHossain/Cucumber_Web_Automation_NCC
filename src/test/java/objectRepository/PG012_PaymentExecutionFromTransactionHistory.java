@@ -36,6 +36,9 @@ public class PG012_PaymentExecutionFromTransactionHistory {
     public static By FromAccountForOwnAccountFT = By.xpath("//*[@id=\"mat-select-value-17\"]/span/span");
 
     public static By selectOtherBankBEFTN = By.xpath("//*[@id=\"mat-option-8\"]/span");
+    public static By OtherBankBEFTNPageTitle = By.xpath("//h1[normalize-space()='Other Bank Transfer']");
+    public static By ToAccountForOtherBankBEFTN = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-other-without-beneficiary/div/div/form/div/div[1]/div/div/div/div[2]/h2");
+    public static By FromAccountForOtherBankBEFTN = By.xpath("//*[@id=\"mat-select-value-5\"]/span/span");
 
 
 }

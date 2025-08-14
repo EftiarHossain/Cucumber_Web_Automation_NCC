@@ -181,5 +181,34 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
         Assert.assertEquals(ToAccount, storeToAccount);
     }
 
+    @When("I can select Other Bank BEFTN from Transaction Type")
+    public void iCanSelectOtherBankBEFTNFromTransactionType() {
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.clickTransactionType, driver);
+        Operations.waitUntilElementIsClickable(PG012_PaymentExecutionFromTransactionHistory.selectOtherBankBEFTN, driver);
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.selectOtherBankBEFTN, driver);
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.filterButton, driver);
+    }
+
+    @Then("I can navigate to the {string} page for Other Bank BEFTN")
+    public void iCanNavigateToTheOtherBankBEFTNPage(String Title) {
+        Operations.matchText(PG012_PaymentExecutionFromTransactionHistory.OtherBankBEFTNPageTitle, Title, driver);
+    }
+
+    @Then("I can compare From Account for Other Bank BEFTN")
+    public void iCanCompareFromAccountForOtherBankBEFTN() {
+        String FromAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.FromAccountForOtherBankBEFTN, driver).replaceAll(".*?(\\d{4}-\\d{10}|\\d{10,}).*", "$1");
+        System.out.println("Transaction History Page From Account: " + storeFromAccount);
+        System.out.println("Top Up Details Page From Account: " + FromAccount);
+        Assert.assertEquals(FromAccount, storeFromAccount);
+    }
+
+    @Then("I can compare To Account for Other Bank BEFTN")
+    public void iCanCompareToAccountForOtherBankBEFTN() {
+        String ToAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.ToAccountForOtherBankBEFTN, driver);
+        System.out.println("Transaction History Page To Account: " + storeToAccount);
+        System.out.println("Top Up Details Page To Account: " + ToAccount);
+        Assert.assertEquals(ToAccount, storeToAccount);
+    }
+
 
 }
