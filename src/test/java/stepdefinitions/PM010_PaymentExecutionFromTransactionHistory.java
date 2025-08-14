@@ -11,6 +11,7 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
     private String storedAmount;
     private String storeToAccount;
     private String storeFromAccount;
+    private String storeTransactionItem;
 
     @When("I navigate to Transaction History Page")
     public void iNavigateToTransactionHistoryPage() {
@@ -63,29 +64,30 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
        storeFromAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.fromAccountForTransactionHistory, driver);
        System.out.println("From Account: " + storeFromAccount);
        System.out.println("To Account: " + storeToAccount);
+       System.out.println("Amount: " + storedAmount);
     }
 
     @Then("I can compare To Account for Mobile Recharge")
     public void iCanCompareToAccountForMR() {
         String ToAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.ToAccountFromTopUpDetails, driver);
-        System.out.println("Transaction History Page To Account " + storeToAccount);
-        System.out.println("Top Up Details Page To Account " + ToAccount);
+        System.out.println("Transaction History Page To Account: " + storeToAccount);
+        System.out.println("Top Up Details Page To Account: " + ToAccount);
         Assert.assertEquals(ToAccount, storeToAccount);
     }
 
     @Then("I can compare From Account for Mobile Recharge")
     public void iCanCompareFromAccountForMR() {
-        String FromAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.fromAccountForTopUpDetails, driver).replaceAll("\\D+", "");
-        System.out.println("Transaction History Page From Account " + storeFromAccount);
-        System.out.println("Top Up Details Page From Account " + FromAccount);
+        String FromAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.fromAccountForTopUpDetails, driver).replaceAll(".*?(\\d{4}-\\d{10}|\\d{10,}).*", "$1");
+        System.out.println("Transaction History Page From Account: " + storeFromAccount);
+        System.out.println("Top Up Details Page From Account: " + FromAccount);
         Assert.assertEquals(FromAccount, storeFromAccount);
     }
 
     @Then("I can compare amount for Mobile Recharge")
     public void iCanCompareAmountForMR() {
         String amount = Operations.getAttribute(PG012_PaymentExecutionFromTransactionHistory.amountFromTopUpDetails,"value", driver);
-        System.out.println("Transaction History Page Amount " + storedAmount);
-        System.out.println("Top Up Details Page Amount " + amount);
+        System.out.println("Transaction History Page Amount: " + storedAmount);
+        System.out.println("Top Up Details Page Amount: " + amount);
         Assert.assertEquals(amount, storedAmount);
     }
 
@@ -102,4 +104,46 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
         Operations.scrollIntoElement(PG012_PaymentExecutionFromTransactionHistory.topUpAgainButton, driver);
         Operations.matchText(PG012_PaymentExecutionFromTransactionHistory.topUpAgainButton, ButtonName, driver);
     }
+
+    @Then("I can see Transaction Item for MFS")
+    public void iCanSeeTransactionItemForMFS() {
+        String GetText = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.selectTransactionItem, driver);
+        storeTransactionItem = GetText.substring(GetText.indexOf("(")+1, GetText.indexOf(")")) + " Details";
+        System.out.println("Transaction Item: " + storeTransactionItem);
+
+    }
+
+    @Then("I can compare From Account for MFS")
+    public void iCanCompareFromAccountForMFS() {
+        String FromAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.FromAccountForMFS, driver).replaceAll(".*?(\\d{4}-\\d{10}|\\d{10,}).*", "$1");
+        System.out.println("Transaction History Page From Account: " + storeFromAccount);
+        System.out.println("Top Up Details Page From Account: " + FromAccount);
+        Assert.assertEquals(FromAccount, storeFromAccount);
+    }
+
+    @Then("I can compare To Account for MFS")
+    public void iCanCompareToAccountForMFS() {
+        String ToAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.ToAccountForMFSDetailsPage, driver);
+        System.out.println("Transaction History Page To Account: " + storeToAccount);
+        System.out.println("Top Up Details Page To Account: " + ToAccount);
+        Assert.assertEquals(ToAccount, storeToAccount);
+    }
+
+    @Then("I can compare amount for MFS")
+    public void iCanCompareAmountForMFS() {
+        String amount = Operations.getAttribute(PG012_PaymentExecutionFromTransactionHistory.amountFromMFSDetails,"value", driver);
+        System.out.println("Transaction History Page Amount: " + storedAmount);
+        System.out.println("Top Up Details Page Amount: " + amount);
+        Assert.assertEquals(amount, storedAmount);
+    }
+
+    @Then("I can compare page title for MFS")
+    public void iCanComparePageTitleForMFS() {
+        String PageTitle = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.MFSPageTitle, driver);
+        System.out.println("Transaction Item: " + storeTransactionItem);
+        System.out.println("Page Title: " + PageTitle);
+        Assert.assertEquals(PageTitle, storeTransactionItem);
+    }
+
+
 }

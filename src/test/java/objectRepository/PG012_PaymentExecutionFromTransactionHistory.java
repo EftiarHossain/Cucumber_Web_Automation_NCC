@@ -24,6 +24,11 @@ public class PG012_PaymentExecutionFromTransactionHistory {
     public static By fromAccountForTopUpDetails = By.xpath("//*[@id=\"mat-select-value-5\"]/span/span");
 
     public static By selectMFSTransfer = By.xpath("//span[normalize-space()='MFS Transfer']");
+    public static By selectTransactionItem = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-transaction-history/div/div/div[2]/div/table/tbody/tr/td[11]");
+    public static By MFSPageTitle = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-mfs-transfer-without-beneficiary/div/div/div/h1");
+    public static By ToAccountForMFSDetailsPage = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-mfs-transfer-without-beneficiary/div/div/form/div/div[1]/div/div/div/div[2]/h2");
+    public static By FromAccountForMFS = By.xpath("//*[@id=\"mat-select-value-11\"]/span/span");
+    public static By amountFromMFSDetails = By.xpath("//input[@placeholder='Enter Transfer Amount']");
 
 
 }
