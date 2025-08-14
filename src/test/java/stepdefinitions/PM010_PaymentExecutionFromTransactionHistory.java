@@ -42,7 +42,7 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
         Operations.matchText(PG012_PaymentExecutionFromTransactionHistory.topUpAgainButton, ButtonName, driver);
     }
 
-    @When("I can click on Top Up Again button")
+    @When("I can click on Action button")
     public void iCanClickOnTopUpAgainButton() {
         Operations.click(PG012_PaymentExecutionFromTransactionHistory.topUpAgainButton, driver);
     }
@@ -54,13 +54,15 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
 
     @Then("I can store Amount, ToAccount, From Account and GrandTotal from Transaction History for Mobile Recharge")
     public void iCanCompareAmountToAccountFromAccountGrandTotalForMobileRecharge() {
-      // storedAmount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.amountFromTransactionHistory, driver);
+       //storedAmount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.amountFromTransactionHistory, driver);
        storeToAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.ToAccountFromTransactionHistory, driver);
        storeFromAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.fromAccountForTransactionHistory, driver);
+       System.out.println("From Account: " + storeFromAccount);
+       System.out.println("To Account: " + storeToAccount);
     }
 
     @Then("I can compare To Account for Mobile Recharge")
-    public void iCanCompareAmountForMR() {
+    public void iCanCompareToAccountForMR() {
         String ToAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.ToAccountFromTopUpDetails, driver);
         System.out.println("Transaction History Page To Account " + storeToAccount);
         System.out.println("Top Up Details Page To Account " + ToAccount);
@@ -73,5 +75,28 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
         System.out.println("Transaction History Page From Account " + storeFromAccount);
         System.out.println("Top Up Details Page From Account " + FromAccount);
         Assert.assertEquals(FromAccount, storeFromAccount);
+    }
+
+    @Then("I can compare amount for Mobile Recharge")
+    public void iCanCompareAmountForMR() {
+        String amount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.amountFromTopUpDetails, driver);
+        //Operations.sendText(PG012_PaymentExecutionFromTransactionHistory.amountFromTopUpDetails, Amount, driver);
+        System.out.println("Transaction History Page Amount " + storedAmount);
+        System.out.println("Top Up Details Page Amount " + amount);
+        //Assert.assertEquals(amount, storedAmount);
+    }
+
+    @When("I can select MFS Transfer from Transaction Type")
+    public void iCanSelectMFSTransferFromTransactionType() {
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.clickTransactionType, driver);
+        Operations.waitUntilElementIsClickable(PG012_PaymentExecutionFromTransactionHistory.selectMFSTransfer, driver);
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.selectMFSTransfer, driver);
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.filterButton, driver);
+    }
+
+    @Then("I can see {string} button name for MFS Transfer")
+    public void iCanSeeButtonNameForMFS(String ButtonName) {
+        Operations.scrollIntoElement(PG012_PaymentExecutionFromTransactionHistory.topUpAgainButton, driver);
+        Operations.matchText(PG012_PaymentExecutionFromTransactionHistory.topUpAgainButton, ButtonName, driver);
     }
 }

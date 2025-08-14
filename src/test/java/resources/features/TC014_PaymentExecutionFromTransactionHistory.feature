@@ -19,7 +19,18 @@ Feature: Payment Execution From Transaction History
     Then I can see "Action" Column
     Then I can see "Top Up Again" button name for Mobile Recharge
     Then I can store Amount, ToAccount, From Account and GrandTotal from Transaction History for Mobile Recharge
-    When I can click on Top Up Again button
+    When I can click on Action button
     Then I can navigate to the "Top Up Details" page
     Then I can compare To Account for Mobile Recharge
     Then I can compare From Account for Mobile Recharge
+#    Then I can compare amount for Mobile Recharge
+
+  Scenario: MFS Transfer
+    When I navigate to Transaction History Page
+    Then I can see the page title "Transaction History"
+    When I can select MFS Transfer from Transaction Type
+    Then I can see "Action" Column
+    Then I can see "Transfer Again" button name for MFS Transfer
+    Then I can store Amount, ToAccount, From Account and GrandTotal from Transaction History for Mobile Recharge
+    When I can click on Action button
+
