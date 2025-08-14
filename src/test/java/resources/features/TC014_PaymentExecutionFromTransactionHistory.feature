@@ -39,3 +39,15 @@ Feature: Payment Execution From Transaction History
     Then I can compare From Account for MFS
     Then I can compare amount for MFS
 
+  Scenario: Own Account FT
+    When I navigate to Transaction History Page
+    Then I can see the page title "Transaction History"
+    When I can select Own Account from Transaction Type
+    Then I can see "Action" Column
+    Then I can see "Transfer Again" button name for MFS Transfer
+    Then I can store Amount, ToAccount, From Account and GrandTotal from Transaction History for Mobile Recharge
+    When I can click on Action button
+    Then I can navigate to the "Own Account Transfer" page for Own Account FT
+    Then I can compare To Account for Own Account FT
+    Then I can compare From Account for Own Account FT
+    Then I can compare amount for MFS

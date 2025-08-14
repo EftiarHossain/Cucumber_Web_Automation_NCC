@@ -15,6 +15,7 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
 
     @When("I navigate to Transaction History Page")
     public void iNavigateToTransactionHistoryPage() {
+        Operations.scrollIntoElement(PG012_PaymentExecutionFromTransactionHistory.transactionHistorySideMenu, driver);
         Operations.click(PG012_PaymentExecutionFromTransactionHistory.transactionHistorySideMenu, driver);
     }
 
@@ -149,6 +150,35 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
         } catch (Exception e) {
             System.err.println("Error while comparing Page Title: " + e.getMessage());
         }
+    }
+
+    @When("I can select Own Account from Transaction Type")
+    public void iCanSelectOwnAccountFromTransactionType() {
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.clickTransactionType, driver);
+        Operations.waitUntilElementIsClickable(PG012_PaymentExecutionFromTransactionHistory.selectOwnAccount, driver);
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.selectOwnAccount, driver);
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.filterButton, driver);
+    }
+
+    @Then("I can navigate to the {string} page for Own Account FT")
+    public void iCanNavigateToTheOwnAccountFTPage(String Title) {
+        Operations.matchText(PG012_PaymentExecutionFromTransactionHistory.OwnAccountFTPageTitle, Title, driver);
+    }
+
+    @Then("I can compare From Account for Own Account FT")
+    public void iCanCompareFromAccountForOwnAccountFT() {
+        String FromAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.FromAccountForOwnAccountFT, driver).replaceAll(".*?(\\d{4}-\\d{10}|\\d{10,}).*", "$1");
+        System.out.println("Transaction History Page From Account: " + storeFromAccount);
+        System.out.println("Top Up Details Page From Account: " + FromAccount);
+        Assert.assertEquals(FromAccount, storeFromAccount);
+    }
+
+    @Then("I can compare To Account for Own Account FT")
+    public void iCanCompareToAccountForOwnAccountFT() {
+        String ToAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.ToAccountForOwnAccountFT, driver);
+        System.out.println("Transaction History Page To Account: " + storeToAccount);
+        System.out.println("Top Up Details Page To Account: " + ToAccount);
+        Assert.assertEquals(ToAccount, storeToAccount);
     }
 
 
