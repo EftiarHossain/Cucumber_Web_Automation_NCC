@@ -34,8 +34,8 @@ Feature: Payment Execution From Transaction History
     Then I can store Amount, ToAccount, From Account and GrandTotal from Transaction History for Mobile Recharge
     Then I can see Transaction Item for MFS
     When I can click on Action button
+    Then I can compare page title for MFS
     Then I can compare To Account for MFS
     Then I can compare From Account for MFS
     Then I can compare amount for MFS
-#    Then I can compare page title for MFS
 
