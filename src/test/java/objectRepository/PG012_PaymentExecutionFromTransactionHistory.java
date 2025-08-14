@@ -14,7 +14,7 @@ public class PG012_PaymentExecutionFromTransactionHistory {
     public static By topUpAgainButton = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-transaction-history/div/div/div[2]/div/table/tbody/tr[1]/td[16]/button");
     public static By topUpDetailsPage = By.xpath("//h1[normalize-space()='Top Up Details']");
 
-    public static By amountFromTransactionHistory = By.xpath("//td[@class='mat-mdc-cell mdc-data-table__cell cdk-cell table-cell cdk-column-transactionAmount mat-column-transactionAmount ng-star-inserted'][normalize-space()='400.00']");
+    public static By amountFromTransactionHistory = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-transaction-history/div/div/div[2]/div/table/tbody/tr[1]/td[6]");
     public static By amountFromTopUpDetails = By.xpath("//input[@placeholder='Enter Amount']");
 
     public static By ToAccountFromTransactionHistory = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-transaction-history/div/div/div[2]/div/table/tbody/tr/td[5]");
@@ -24,5 +24,6 @@ public class PG012_PaymentExecutionFromTransactionHistory {
     public static By fromAccountForTopUpDetails = By.xpath("//*[@id=\"mat-select-value-5\"]/span/span");
 
     public static By selectMFSTransfer = By.xpath("//span[normalize-space()='MFS Transfer']");
+
 
 }

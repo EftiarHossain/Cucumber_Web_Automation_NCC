@@ -54,7 +54,11 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
 
     @Then("I can store Amount, ToAccount, From Account and GrandTotal from Transaction History for Mobile Recharge")
     public void iCanCompareAmountToAccountFromAccountGrandTotalForMobileRecharge() {
-       //storedAmount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.amountFromTransactionHistory, driver);
+        storedAmount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.amountFromTransactionHistory, driver).trim();
+       if (storedAmount.contains(".")){
+           storedAmount = storedAmount.replaceAll("\\.0+$", "");
+           storedAmount = storedAmount.replaceAll("(\\.\\d*[1-9])0+$", "$1");
+       }
        storeToAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.ToAccountFromTransactionHistory, driver);
        storeFromAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.fromAccountForTransactionHistory, driver);
        System.out.println("From Account: " + storeFromAccount);
@@ -79,11 +83,10 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
 
     @Then("I can compare amount for Mobile Recharge")
     public void iCanCompareAmountForMR() {
-        String amount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.amountFromTopUpDetails, driver);
-        //Operations.sendText(PG012_PaymentExecutionFromTransactionHistory.amountFromTopUpDetails, Amount, driver);
+        String amount = Operations.getAttribute(PG012_PaymentExecutionFromTransactionHistory.amountFromTopUpDetails,"value", driver);
         System.out.println("Transaction History Page Amount " + storedAmount);
         System.out.println("Top Up Details Page Amount " + amount);
-        //Assert.assertEquals(amount, storedAmount);
+        Assert.assertEquals(amount, storedAmount);
     }
 
     @When("I can select MFS Transfer from Transaction Type")
