@@ -24,7 +24,7 @@ Feature: Payment Execution From Transaction History
 #    Then I can compare To Account for Mobile Recharge
 #    Then I can compare From Account for Mobile Recharge
 #    Then I can compare amount for Mobile Recharge
-
+#
 #  Scenario: MFS Transfer
 #    When I navigate to Transaction History Page
 #    Then I can see the page title "Transaction History"
@@ -38,7 +38,7 @@ Feature: Payment Execution From Transaction History
 #    Then I can compare To Account for MFS
 #    Then I can compare From Account for MFS
 #    Then I can compare amount for MFS
-
+#
 #  Scenario: Own Account FT
 #    When I navigate to Transaction History Page
 #    Then I can see the page title "Transaction History"
@@ -51,16 +51,30 @@ Feature: Payment Execution From Transaction History
 #    Then I can compare To Account for Own Account FT
 #    Then I can compare From Account for Own Account FT
 #    Then I can compare amount for MFS
+#
+#  Scenario: Other Bank BEFTN
+#    When I navigate to Transaction History Page
+#    Then I can see the page title "Transaction History"
+#    When I can select Other Bank BEFTN from Transaction Type
+#    Then I can see "Action" Column
+#    Then I can see "Transfer Again" button name for MFS Transfer
+#    Then I can store Amount, ToAccount, From Account and GrandTotal from Transaction History for Mobile Recharge
+#    When I can click on Action button
+#    Then I can navigate to the "Other Bank Transfer" page for Other Bank
+#    Then I can compare To Account for Other Bank BEFTN
+#    Then I can compare From Account for Other Bank BEFTN
+#    Then I can compare amount for MFS
+#    Then I can check BEFTN is selected
 
-  Scenario: Other Bank BEFTN
+  Scenario: Utility Bill Payment
     When I navigate to Transaction History Page
     Then I can see the page title "Transaction History"
-    When I can select Other Bank BEFTN from Transaction Type
+    When I can select Utility Bill from Transaction Type
     Then I can see "Action" Column
-    Then I can see "Transfer Again" button name for MFS Transfer
+    Then I can see "Pay Again" button name for MFS Transfer
     Then I can store Amount, ToAccount, From Account and GrandTotal from Transaction History for Mobile Recharge
+    Then I can see Transaction Item for Utility Bill
     When I can click on Action button
-    Then I can navigate to the "Other Bank Transfer" page for Other Bank BEFTN
-    Then I can compare To Account for Other Bank BEFTN
-    Then I can compare From Account for Other Bank BEFTN
-    Then I can compare amount for MFS
+    Then I can compare Page Title for Utility Bill
+    Then I can compare To Account for Utility Bill
+    Then I can compare amount for Utility Bill
