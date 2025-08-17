@@ -120,7 +120,7 @@ Feature: Payment Execution From Transaction History
     Then I can compare amount for NPSB
     Then I can check RTGS is selected
 
-  Scenario: Utility Bill Payment
+  Scenario: Donation
     When I navigate to Transaction History Page
     Then I can see the page title "Transaction History"
     When I can select Utility Bill from Transaction Type
