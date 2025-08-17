@@ -70,6 +70,12 @@ public class Operations {
         return elementText;
     }
 
+    public static String getAttribute(By locator, String attributeName, WebDriver driver){
+        WebElement el = findElement(locator, driver);
+        String elementText = el.getAttribute(attributeName);
+        return elementText;
+    }
+
     public static void matchText(By locator, String expectedText, WebDriver driver){
         WebElement el = findElement(locator, driver);
         String actualText = el.getText();
@@ -125,6 +131,11 @@ public class Operations {
     public static void scrollIntoElement(By locator, WebDriver driver) {
         WebElement el = findElement(locator, driver);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", el);
+    }
+
+    public static void scrollIntoElementClick(By locator, WebDriver driver) {
+        WebElement el = findElement(locator, driver);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", el);
     }
 
     public static boolean verifyElementIsPresent(By locator, WebDriver driver) {
