@@ -18,28 +18,28 @@ public class PM009_Payments extends Base {
     @Then("I navigated to the Donation details screen and Input Payment Amount {string} and click on the Next to navigate review page")
     public void iNavigatedToTheTransferDetailsScreenMetlife(String paymentAmount) {
         Operations.verifyElementIsPresent(PG011_Payments.billPaymentTitle, driver);
-        Operations.verifyElementIsPresent(PG011_Payments.donationPaymentSelection, driver);
-        Operations.click(PG011_Payments.donationPaymentSelection, driver);
-        Operations.waitUntilElementIsVisible(PG011_Payments.selectAsSunnah, driver);
-        Operations.verifyElementIsPresent(PG011_Payments.selectAsSunnah, driver);
-        Operations.click(PG011_Payments.selectAsSunnah, driver);
-        Operations.waitUntilElementIsVisible(PG011_Payments.asSunnahDetailsScreenTitle, driver);
-        Operations.verifyElementIsPresent(PG011_Payments.asSunnahDetailsScreenTitle, driver);
+        Operations.verifyElementIsPresent(PG011_Payments.insuranceBillPaymentSelection, driver);
+        Operations.click(PG011_Payments.insuranceBillPaymentSelection, driver);
+        Operations.waitUntilElementIsVisible(PG011_Payments.selectMetlife, driver);
+        Operations.verifyElementIsPresent(PG011_Payments.selectMetlife, driver);
+        Operations.click(PG011_Payments.selectMetlife, driver);
+        Operations.waitUntilElementIsVisible(PG011_Payments.metlifeDetailsScreenTitle, driver);
+        Operations.verifyElementIsPresent(PG011_Payments.metlifeDetailsScreenTitle, driver);
 
         Operations.verifyElementIsPresent(PG011_Payments.enterTransferAmount, driver);
         Operations.click(PG011_Payments.enterTransferAmount, driver);
         Operations.sendText(PG011_Payments.enterTransferAmount,paymentAmount, driver);
 
-        Operations.waitUntilElementIsClickable(PG011_Payments.nextButton, driver);
-        Operations.click(PG011_Payments.nextButton, driver);
+        Operations.waitUntilElementIsClickable(PG011_Payments.verifyButton, driver);
+        Operations.click(PG011_Payments.verifyButton, driver);
     }
 
     @Then("I can see Bill Payment details on the review page with selected from account and available balance click on the confirm and select OTP channel, accept terms and condition and click on Send OTP for 2fa Verification by {string}")
     public void iFilledTransferDetailsScreen(String OTP) throws InterruptedException {
         Operations.verifyElementIsPresent(PG011_Payments.billDetailsPageTitle, driver);
         Operations.verifyElementIsPresent(PG011_Payments.billDetailsPageTitle, driver);
-        Operations.verifyElementIsPresent(PG011_Payments.billDetailsNextBtn, driver);
-        Operations.click(PG011_Payments.billDetailsNextBtn, driver);
+        Operations.verifyElementIsPresent(PG011_Payments.transferDetailsNextBtn, driver);
+        Operations.click(PG011_Payments.transferDetailsNextBtn, driver);
 
         Operations.verifyElementIsPresent(PG011_Payments.paymentAuthenticationTypeSMS, driver);
         Operations.click(PG011_Payments.paymentAuthenticationTypeSMS, driver);
