@@ -291,4 +291,32 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
         Assert.assertEquals(storedAmount, amount);
     }
 
+    @When("I can select Other Bank NPSB from Transaction Type")
+    public void iCanSelectOtherBankNPSFromTransactionType() {
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.clickTransactionType, driver);
+        Operations.scrollIntoElementClick(PG012_PaymentExecutionFromTransactionHistory.selectOtherBankNPSB, driver);
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.filterButton, driver);
+    }
+
+    @Then("I can compare From Account for Other Bank NPSB")
+    public void iCanCompareFromAccountForOtherBankNPSB() {
+        String FromAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.FromAccountForOtherBankNPSB, driver).replaceAll(".*?(\\d{4}-\\d{10}|\\d{10,}).*", "$1");
+        System.out.println("Within Bank FT Details Page From Account: " + FromAccount);
+        Assert.assertEquals(FromAccount, storeFromAccount);
+    }
+
+    @Then("I can compare amount for NPSB")
+    public void iCanCompareAmountForOtherBankNPSB() {
+        Operations.scrollIntoElement(PG012_PaymentExecutionFromTransactionHistory.AmountForOtherBankNPSB, driver);
+        String amount = Operations.getAttribute(PG012_PaymentExecutionFromTransactionHistory.AmountForOtherBankNPSB,"value", driver);
+        System.out.println("Details Page Amount: " + amount);
+        Assert.assertEquals(storedAmount, amount);
+    }
+
+    @Then("I can check NPSB is selected")
+    public void iCanCheckNPSBIsSelected() {
+        Operations.scrollIntoElement(PG012_PaymentExecutionFromTransactionHistory.NPSBRadioButton, driver);
+        Operations.verifyElementIsSelected(PG012_PaymentExecutionFromTransactionHistory.NPSBRadioButton, driver);
+    }
+
 }

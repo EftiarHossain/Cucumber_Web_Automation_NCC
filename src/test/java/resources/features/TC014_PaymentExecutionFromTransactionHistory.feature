@@ -79,15 +79,29 @@ Feature: Payment Execution From Transaction History
 #    Then I can compare To Account for Utility Bill
 #    Then I can compare amount for Utility Bill
 
-  Scenario: Within Bank FT
+#  Scenario: Within Bank FT
+#    When I navigate to Transaction History Page
+#    Then I can see the page title "Transaction History"
+#    When I can select Within Bank FT from Transaction Type
+#    Then I can see "Action" Column
+#    Then I can see "Transfer Again" button name for MFS Transfer
+#    Then I can store Amount, ToAccount, From Account and GrandTotal from Transaction History for Mobile Recharge
+#    When I can click on Action button
+#    Then I can navigate to the "NCC Bank Account Transfer" page for Within Bank FT
+#    Then I can compare To Account for Within Bank FT
+#    Then I can compare From Account for Within Bank FT
+#    Then I can compare amount for Within Bank FT
+
+  Scenario: Other Bank NPSB
     When I navigate to Transaction History Page
     Then I can see the page title "Transaction History"
-    When I can select Within Bank FT from Transaction Type
+    When I can select Other Bank NPSB from Transaction Type
     Then I can see "Action" Column
     Then I can see "Transfer Again" button name for MFS Transfer
     Then I can store Amount, ToAccount, From Account and GrandTotal from Transaction History for Mobile Recharge
     When I can click on Action button
-    Then I can navigate to the "NCC Bank Account Transfer" page for Within Bank FT
-    Then I can compare To Account for Within Bank FT
-    Then I can compare From Account for Within Bank FT
-    Then I can compare amount for Within Bank FT
+    Then I can navigate to the "Other Bank Transfer" page for Other Bank
+    Then I can compare To Account for Other Bank BEFTN
+    Then I can compare From Account for Other Bank NPSB
+    Then I can compare amount for NPSB
+    Then I can check BEFTN is selected

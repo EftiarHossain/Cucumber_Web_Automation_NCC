@@ -41,12 +41,12 @@ public class PG012_PaymentExecutionFromTransactionHistory {
     public static By FromAccountForOtherBankBEFTN = By.xpath("//*[@id=\"mat-select-value-23\"]/span/span");
     public static By BEFTNRadioButton = By.xpath("//input[@type='radio' and @value='BEFTN']");
 
-    public static By selectOtherBankNPSB = By.xpath("");
-   // public static By ToAccountForOtherBankNPSB = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-other-without-beneficiary/div/div/form/div/div[1]/div/div/div/div[2]/h2");
-  //  public static By FromAccountForOtherBankNPSB = By.xpath("//*[@id=\"mat-select-value-5\"]/span/span");
+    public static By selectOtherBankNPSB = By.xpath("//mat-option//span[normalize-space()='Other Bank (NPSB)']");
+    public static By FromAccountForOtherBankNPSB = By.xpath("//*[@id=\"mat-select-value-5\"]/span/span");
+    public static By AmountForOtherBankNPSB = By.xpath("//*[@id=\"mat-input-6\"]");
     public static By NPSBRadioButton = By.xpath("//input[@type='radio' and @value='NPSB']");
 
-    public static By selectOtherBankRTGS = By.xpath("//*[@id=\"mat-option-73\"]/span");
+    public static By selectOtherBankRTGS = By.xpath("//mat-option//span[normalize-space()='Other Bank (RTGS)']");
    // public static By ToAccountForOtherBankRTGS = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-other-without-beneficiary/div/div/form/div/div[1]/div/div/div/div[2]/h2");
   //  public static By FromAccountForOtherBankRTGS = By.xpath("//*[@id=\"mat-select-value-5\"]/span/span");
     public static By RTGSRadioButton = By.xpath("//input[@type='radio' and @value='RTGS']");
