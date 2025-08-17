@@ -6,7 +6,7 @@ public class PG012_PaymentExecutionFromTransactionHistory {
     public static By transactionHistorySideMenu = By.xpath("//span[normalize-space()='Transaction History']");
 
     public static By pageTitleTransactionHistory = By.xpath("//h1[normalize-space()='Transaction History']");
-    public static By clickTransactionType = By.xpath("//span[normalize-space()='--Select Transaction Type--']");
+    public static By clickTransactionType = By.xpath("//*[@id=\"mat-select-value-1\"]/span");
     public static By selectMobileRecharge = By.xpath("//*[@id=\"mat-option-4\"]");
     public static By filterButton = By.xpath("//button[normalize-space()='Filter']");
 
@@ -49,12 +49,13 @@ public class PG012_PaymentExecutionFromTransactionHistory {
     public static By selectOtherBankRTGS = By.xpath("//*[@id=\"mat-option-73\"]/span");
    // public static By ToAccountForOtherBankRTGS = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-other-without-beneficiary/div/div/form/div/div[1]/div/div/div/div[2]/h2");
   //  public static By FromAccountForOtherBankRTGS = By.xpath("//*[@id=\"mat-select-value-5\"]/span/span");
-    public static By RTGSRadioButton = By.xpath("//input[@type='radio' and @value='NPSB']");
+    public static By RTGSRadioButton = By.xpath("//input[@type='radio' and @value='RTGS']");
 
-    public static By selectWithinBankFT = By.xpath("//*[@id=\"mat-option-73\"]/span");
-    public static By ToAccountForWithinBankFT = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-other-without-beneficiary/div/div/form/div/div[1]/div/div/div/div[2]/h2");
+    public static By selectWithinBankFT = By.xpath("//mat-option//span[normalize-space()='Within Bank']");
+    public static By ToAccountForWithinBankFT = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-within-bank-without-beneficiary/div/div/form/div/div[1]/div/div/div/div[2]/h2");
     public static By FromAccountForWithinBankFT = By.xpath("//*[@id=\"mat-select-value-5\"]/span/span");
-    public static By WithinBankFTPageTitle = By.xpath("//input[@type='radio' and @value='NPSB']");
+    public static By AmountForWithinBankFT = By.xpath("//*[@id=\"mat-input-4\"]");
+    public static By WithinBankFTPageTitle = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-within-bank-without-beneficiary/div/div/div/h1");
 
     public static By selectUtilityBill = By.xpath("//span[normalize-space()='Utility Bill']");
     public static By ToAccountForUtilityBill = By.xpath("//*[@id=\"mat-input-2\"]");

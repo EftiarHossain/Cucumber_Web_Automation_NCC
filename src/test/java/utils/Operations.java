@@ -133,6 +133,11 @@ public class Operations {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", el);
     }
 
+    public static void scrollIntoElementClick(By locator, WebDriver driver) {
+        WebElement el = findElement(locator, driver);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", el);
+    }
+
     public static boolean verifyElementIsPresent(By locator, WebDriver driver) {
         try{
             WebElement el = findElement(locator, driver);

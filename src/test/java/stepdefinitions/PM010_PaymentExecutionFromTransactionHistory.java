@@ -131,7 +131,7 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
     @Then("I can compare amount for MFS")
     public void iCanCompareAmountForMFS() {
         String amount = Operations.getAttribute(PG012_PaymentExecutionFromTransactionHistory.amountFromMFSDetails,"value", driver);
-        System.out.println("Top Up Details Page Amount: " + amount);
+        System.out.println("Details Page Amount: " + amount);
         Assert.assertEquals(storedAmount, amount);
     }
 
@@ -164,14 +164,14 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
     @Then("I can compare From Account for Own Account FT")
     public void iCanCompareFromAccountForOwnAccountFT() {
         String FromAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.FromAccountForOwnAccountFT, driver).replaceAll(".*?(\\d{4}-\\d{10}|\\d{10,}).*", "$1");
-        System.out.println("Top Up Details Page From Account: " + FromAccount);
+        System.out.println("Own Account From Account: " + FromAccount);
         Assert.assertEquals(FromAccount, storeFromAccount);
     }
 
     @Then("I can compare To Account for Own Account FT")
     public void iCanCompareToAccountForOwnAccountFT() {
         String ToAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.ToAccountForOwnAccountFT, driver);
-        System.out.println("Top Up Details Page To Account: " + ToAccount);
+        System.out.println("Own Account To Account: " + ToAccount);
         Assert.assertEquals(ToAccount, storeToAccount);
     }
 
@@ -192,14 +192,14 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
     @Then("I can compare From Account for Other Bank BEFTN")
     public void iCanCompareFromAccountForOtherBankBEFTN() {
         String FromAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.FromAccountForOtherBankBEFTN, driver).replaceAll(".*?(\\d{4}-\\d{10}|\\d{10,}).*", "$1");
-        System.out.println("Top Up Details Page From Account: " + FromAccount);
+        System.out.println("BEFTN From Account: " + FromAccount);
         Assert.assertEquals(FromAccount, storeFromAccount);
     }
 
     @Then("I can compare To Account for Other Bank BEFTN")
     public void iCanCompareToAccountForOtherBankBEFTN() {
         String ToAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.ToAccountForOtherBankBEFTN, driver);
-        System.out.println("Top Up Details Page To Account: " + ToAccount);
+        System.out.println("BEFTN To Account: " + ToAccount);
         Assert.assertEquals(ToAccount, storeToAccount);
     }
 
@@ -255,6 +255,40 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
         }
         System.out.println("Amount on the Utility Details Page: " + finalAmount);
         Assert.assertEquals(finalAmount, storedAmount);
+    }
+
+    @When("I can select Within Bank FT from Transaction Type")
+    public void iCanSelectWithinBankFTFromTransactionType() {
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.clickTransactionType, driver);
+        Operations.scrollIntoElementClick(PG012_PaymentExecutionFromTransactionHistory.selectWithinBankFT, driver);
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.filterButton, driver);
+    }
+
+    @Then("I can navigate to the {string} page for Within Bank FT")
+    public void iCanNavigateToTheWithinBankFTPage(String Title) {
+        Operations.matchText(PG012_PaymentExecutionFromTransactionHistory.WithinBankFTPageTitle, Title, driver);
+    }
+
+    @Then("I can compare To Account for Within Bank FT")
+    public void iCanCompareToAccountForWithinBankFT() {
+        String ToAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.ToAccountForWithinBankFT, driver);
+        System.out.println("Within Bank FT Details Page To Account: " + ToAccount);
+        Assert.assertEquals(ToAccount, storeToAccount);
+    }
+
+    @Then("I can compare From Account for Within Bank FT")
+    public void iCanCompareFromAccountForWithinBankFT() {
+        String FromAccount = Operations.getText(PG012_PaymentExecutionFromTransactionHistory.FromAccountForWithinBankFT, driver).replaceAll(".*?(\\d{4}-\\d{10}|\\d{10,}).*", "$1");
+        System.out.println("Within Bank FT Details Page From Account: " + FromAccount);
+        Assert.assertEquals(FromAccount, storeFromAccount);
+    }
+
+    @Then("I can compare amount for Within Bank FT")
+    public void iCanCompareAmountForWithinBankFT() {
+        Operations.scrollIntoElement(PG012_PaymentExecutionFromTransactionHistory.AmountForWithinBankFT, driver);
+        String amount = Operations.getAttribute(PG012_PaymentExecutionFromTransactionHistory.AmountForWithinBankFT,"value", driver);
+        System.out.println("Details Page Amount: " + amount);
+        Assert.assertEquals(storedAmount, amount);
     }
 
 }
