@@ -319,4 +319,17 @@ public class PM010_PaymentExecutionFromTransactionHistory extends Base {
         Operations.verifyElementIsSelected(PG012_PaymentExecutionFromTransactionHistory.NPSBRadioButton, driver);
     }
 
+    @When("I can select Other Bank RTGS from Transaction Type")
+    public void iCanSelectOtherBankRTGSFromTransactionType() {
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.clickTransactionType, driver);
+        Operations.scrollIntoElementClick(PG012_PaymentExecutionFromTransactionHistory.selectOtherBankRTGS, driver);
+        Operations.click(PG012_PaymentExecutionFromTransactionHistory.filterButton, driver);
+    }
+
+    @Then("I can check RTGS is selected")
+    public void iCanCheckRTGSIsSelected() {
+        Operations.scrollIntoElement(PG012_PaymentExecutionFromTransactionHistory.RTGSRadioButton, driver);
+        Operations.verifyElementIsSelected(PG012_PaymentExecutionFromTransactionHistory.RTGSRadioButton, driver);
+    }
+
 }

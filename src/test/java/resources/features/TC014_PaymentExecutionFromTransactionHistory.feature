@@ -92,10 +92,24 @@ Feature: Payment Execution From Transaction History
 #    Then I can compare From Account for Within Bank FT
 #    Then I can compare amount for Within Bank FT
 
-  Scenario: Other Bank NPSB
+#  Scenario: Other Bank NPSB
+#    When I navigate to Transaction History Page
+#    Then I can see the page title "Transaction History"
+#    When I can select Other Bank NPSB from Transaction Type
+#    Then I can see "Action" Column
+#    Then I can see "Transfer Again" button name for MFS Transfer
+#    Then I can store Amount, ToAccount, From Account and GrandTotal from Transaction History for Mobile Recharge
+#    When I can click on Action button
+#    Then I can navigate to the "Other Bank Transfer" page for Other Bank
+#    Then I can compare To Account for Other Bank BEFTN
+#    Then I can compare From Account for Other Bank NPSB
+#    Then I can compare amount for NPSB
+#    Then I can check BEFTN is selected
+
+  Scenario: Other Bank RTGS
     When I navigate to Transaction History Page
     Then I can see the page title "Transaction History"
-    When I can select Other Bank NPSB from Transaction Type
+    When I can select Other Bank RTGS from Transaction Type
     Then I can see "Action" Column
     Then I can see "Transfer Again" button name for MFS Transfer
     Then I can store Amount, ToAccount, From Account and GrandTotal from Transaction History for Mobile Recharge
@@ -104,4 +118,17 @@ Feature: Payment Execution From Transaction History
     Then I can compare To Account for Other Bank BEFTN
     Then I can compare From Account for Other Bank NPSB
     Then I can compare amount for NPSB
-    Then I can check BEFTN is selected
+    Then I can check RTGS is selected
+
+  Scenario: Utility Bill Payment
+    When I navigate to Transaction History Page
+    Then I can see the page title "Transaction History"
+    When I can select Utility Bill from Transaction Type
+    Then I can see "Action" Column
+    Then I can see "Pay Again" button name for MFS Transfer
+    Then I can store Amount, ToAccount, From Account and GrandTotal from Transaction History for Mobile Recharge
+    Then I can see Transaction Item for Utility Bill
+    When I can click on Action button
+    Then I can compare Page Title for Utility Bill
+    Then I can compare To Account for Utility Bill
+    Then I can compare amount for Utility Bill

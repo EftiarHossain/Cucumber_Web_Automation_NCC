@@ -47,8 +47,8 @@ public class PG012_PaymentExecutionFromTransactionHistory {
     public static By NPSBRadioButton = By.xpath("//input[@type='radio' and @value='NPSB']");
 
     public static By selectOtherBankRTGS = By.xpath("//mat-option//span[normalize-space()='Other Bank (RTGS)']");
-   // public static By ToAccountForOtherBankRTGS = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-other-without-beneficiary/div/div/form/div/div[1]/div/div/div/div[2]/h2");
-  //  public static By FromAccountForOtherBankRTGS = By.xpath("//*[@id=\"mat-select-value-5\"]/span/span");
+    public static By AmountForOtherBankRTGS = By.xpath("");
+    public static By FromAccountForOtherBankRTGS = By.xpath("");
     public static By RTGSRadioButton = By.xpath("//input[@type='radio' and @value='RTGS']");
 
     public static By selectWithinBankFT = By.xpath("//mat-option//span[normalize-space()='Within Bank']");
@@ -63,20 +63,20 @@ public class PG012_PaymentExecutionFromTransactionHistory {
     public static By UtilityBillTransactionItem = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-transaction-history/div/div/div[2]/div/table/tbody/tr[1]/td[11]");
     public static By UtilityBillPageTitle = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-bills-and-fees-details/div/div/div/h1");
 
-    public static By selectDonation = By.xpath("//*[@id=\"mat-option-73\"]/span");
-   // public static By ToAccountForDonation = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-other-without-beneficiary/div/div/form/div/div[1]/div/div/div/div[2]/h2");
-  //  public static By FromAccountForDonation = By.xpath("//*[@id=\"mat-select-value-5\"]/span/span");
-    public static By DonationPageTitle = By.xpath("//input[@type='radio' and @value='NPSB']");
+    public static By selectDonation = By.xpath("//span[normalize-space()='Donation']");
+    public static By ToAccountForDonation = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-other-without-beneficiary/div/div/form/div/div[1]/div/div/div/div[2]/h2");
+    public static By FromAccountForDonation = By.xpath("//*[@id=\"mat-select-value-5\"]/span/span");
+    public static By DonationPageTitle = By.xpath("");
 
-    public static By selectOwnCardPayment = By.xpath("//*[@id=\"mat-option-73\"]/span");
-   // public static By ToAccountForOwnCardPayment = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-other-without-beneficiary/div/div/form/div/div[1]/div/div/div/div[2]/h2");
-  //  public static By FromAccountForOwnCardPayment = By.xpath("//*[@id=\"mat-select-value-5\"]/span/span");
-    public static By OwnCardPaymentPageTitle = By.xpath("//input[@type='radio' and @value='NPSB']");
+    public static By selectOwnCardPayment = By.xpath("//span[normalize-space()='Own Card Payment']");
+    public static By ToAccountForOwnCardPayment = By.xpath("");
+    public static By FromAccountForOwnCardPayment = By.xpath("//*[@id=\"mat-select-value-5\"]/span/span");
+    public static By OwnCardPaymentPageTitle = By.xpath("");
 
-    public static By selectWithinCardPayment = By.xpath("//*[@id=\"mat-option-73\"]/span");
-   // public static By ToAccountForWithinCardPayment = By.xpath("/html/body/app-root/layout/classy-layout/div/div[2]/app-other-without-beneficiary/div/div/form/div/div[1]/div/div/div/div[2]/h2");
-  //  public static By FromAccountForWithinCardPayment = By.xpath("//*[@id=\"mat-select-value-5\"]/span/span");
-    public static By WithinCardPaymentPageTitle = By.xpath("//input[@type='radio' and @value='NPSB']");
+    public static By selectWithinCardPayment = By.xpath("//mat-option//span[normalize-space()='Within Card Payment']");
+    public static By ToAccountForWithinCardPayment = By.xpath("");
+    public static By FromAccountForWithinCardPayment = By.xpath("");
+    public static By WithinCardPaymentPageTitle = By.xpath("");
 
 
 }
